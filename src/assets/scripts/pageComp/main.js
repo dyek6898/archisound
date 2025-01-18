@@ -33,6 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     document.querySelector("body").style.overflow = "hidden";
     devMainFunction.fnIntroMotion();
+    devMainFunction.mainTextShow();
+    devMainFunction.topParallaxAnimation();
   }
   devMainFunction.textFillAnimation();
   devMainFunction.mainScrollAnimation();
@@ -77,7 +79,7 @@ const devMainFunction = {
   fnIntroMotion() {
     window.scrollTo(0, 0);
 
-    // HTML 요소 생성 및 추가
+    // intro 요소 추가
     const introArea = document.createElement("div");
     introArea.classList.add("intro-area");
 
@@ -90,29 +92,6 @@ const devMainFunction = {
     const introBg02 = document.createElement("div");
     introBg02.classList.add("intro-bg02");
 
-    const btnEnterWrap = document.createElement("div");
-    btnEnterWrap.classList.add("btn-enter-wrap");
-
-    const btnEnter = document.createElement("button");
-    btnEnter.classList.add("btn-enter");
-
-    const fadeEl01 = document.createElement("span");
-    fadeEl01.classList.add("fade-01");
-
-    const fadeEl02 = document.createElement("span");
-    fadeEl02.classList.add("fade-02");
-
-    const fadeEl03 = document.createElement("span");
-    fadeEl03.classList.add("fade-03");
-
-    const btnEnterIco = document.createElement("i");
-    btnEnterIco.classList.add("btn-enter-ico");
-
-    const textEnter = document.createElement("p");
-    textEnter.classList.add("text-enter");
-    textEnter.textContent = "사운드와 함께 아키사운드 시작하기";
-
-    // lottie 생성
     const animation1 = bodymovin.loadAnimation({
       container: introLottie,
       path: "../../assets/images/lottie/intro_animation01.json",
@@ -121,192 +100,43 @@ const devMainFunction = {
       autoplay: false,
     });
 
-    if (!isMobile) {
-      // pc
-      gsap.to(fadeEl01, {
-        scale: 1.1,
-        duration: 0.4,
-        repeat: -1,
-        yoyo: true, // 왕복 애니메이션
-      });
-
-      gsap.to(fadeEl02, {
-        scale: 3.6,
-        alpha: 0,
-        duration: 0.9,
-        repeat: -1,
-      });
-    } else {
-      // mobile
-      gsap.to(fadeEl01, {
-        scale: 1.1,
-        duration: 0.4,
-        repeat: -1,
-        yoyo: true, // 왕복 애니메이션
-      });
-      gsap.to(fadeEl02, {
-        scale: 2.8,
-        alpha: 0,
-        duration: 0.9,
-        repeat: -1,
-      });
-    }
-
-    btnEnter.appendChild(btnEnterIco);
-    btnEnter.appendChild(fadeEl01);
-    btnEnter.appendChild(fadeEl02);
-    btnEnter.appendChild(fadeEl03);
-    btnEnterWrap.appendChild(btnEnter);
-    btnEnterWrap.appendChild(textEnter);
-
     introArea.appendChild(introLottie);
     introArea.appendChild(introBg01);
     introArea.appendChild(introBg02);
-    introArea.appendChild(btnEnterWrap);
     document.body.appendChild(introArea);
 
-    const playIntro = (clicked) => {
-      btnEnterWrap.style.display = "none";
-      animation1.play();
+    animation1.play();
 
-      const audio = document.createElement("audio");
-      const soundSource = document.createElement("source");
-      audio.classList.add("audio-type01");
-
-      soundSource.src =
-        "https://uxdev.etribe.co.kr/Archisound-front/dist/assets/images/mp4/intro_bgm.mp3";
-      soundSource.type = "audio/mpeg";
-      audio.appendChild(soundSource);
-      document.body.appendChild(audio);
-
-      setTimeout(() => {
-        if (!clicked) return;
-        audio.play().catch((error) => {
-          // Autoplay was blocked. Do something
-        });
-      }, 100);
-
-      const audio2 = document.createElement("audio");
-      const soundSource2 = document.createElement("source");
-      audio2.classList.add("audio-type02");
-
-      soundSource2.src =
-        "https://uxdev.etribe.co.kr/Archisound-front/dist/assets/images/mp4/background_bgm.mp3";
-      soundSource2.type = "audio/mpeg";
-      audio2.appendChild(soundSource2);
-      document.body.appendChild(audio2);
-
-      if (clicked) {
-        devMainFunction.soundPlayButton(audio, audio2, audio.paused);
-      } else {
-        devMainFunction.soundPlayButton(audio, audio2);
-      }
-
-      setTimeout(() => {
-        if (!clicked) return;
-        audio2.play().catch((error) => {
-          // Autoplay was blocked. Do something
-        });
-      }, 4000);
-
-      removeIntro();
-    };
-    const btnEnterPlayTime = setTimeout(() => {
-      playIntro();
-      devMainFunction.mainTextShow();
-      devMainFunction.topParallaxAnimation();
-    }, 3000);
-
-    btnEnter.addEventListener("click", (e) => {
-      clearTimeout(btnEnterPlayTime);
-      playIntro(e.target);
-      devMainFunction.mainTextShow();
-      devMainFunction.topParallaxAnimation();
+    gsap.set(introBg01, { y: 0 });
+    gsap.set(introBg02, { y: 0 });
+    gsap.set(introLottie, { autoAlpha: 1, scale: 1 });
+    gsap.to(introBg01, {
+      y: "-100%",
+      delay: 3.95,
+      duration: 0.7,
+      ease: "power3.inOut",
+    });
+    gsap.to(introBg02, {
+      y: "-100%",
+      delay: 3.95,
+      duration: 0.85,
+      ease: "power3.inOut",
+    });
+    gsap.to(introLottie, {
+      autoAlpha: 0,
+      delay: 3.9,
+      duration: 0.3,
+      scale: 0.95,
     });
 
-    const removeIntro = () => {
-      gsap.set(introBg01, { y: 0 });
-      gsap.set(introBg02, { y: 0 });
-      gsap.set(introLottie, { autoAlpha: 1, scale: 1 });
-      gsap.to(introBg01, {
-        y: "-100%",
-        delay: 3.95,
-        duration: 0.7,
-        ease: "power3.inOut",
-      });
-      gsap.to(introBg02, {
-        y: "-100%",
-        delay: 3.95,
-        duration: 0.85,
-        ease: "power3.inOut",
-      });
-      gsap.to(introLottie, {
-        autoAlpha: 0,
-        delay: 3.9,
-        duration: 0.3,
-        scale: 0.95,
-      });
+    setTimeout(() => {
+      document.body.style.overflow = "auto";
+    }, 4000);
 
-      setTimeout(() => {
-        document.body.style.overflow = "auto";
-      }, 4000);
-
-      // animation 실행 후 요소 제거
-      setTimeout(function () {
-        introArea.parentNode.removeChild(introArea);
-      }, 5100);
-    };
-  },
-
-  soundPlayButton(audio1, audio2, clicked) {
-    const soundPlayBtn = document.createElement("button");
-    const div = document.createElement("div");
-    div.classList.add("play-btn-wrap");
-    div.appendChild(soundPlayBtn);
-    soundPlayBtn.classList.add("sound-play-btn");
-    document.querySelector(".archi-main-wrap").appendChild(div);
-
-    if (!audio1) {
-      audio1 = {
-        paused: true,
-      };
-      audio2 = document.createElement("audio");
-      const soundSource2 = document.createElement("source");
-      audio2.classList.add("audio-type02");
-
-      soundSource2.src =
-        "https://uxdev.etribe.co.kr/Archisound-front/dist/assets/images/mp4/background_bgm.mp3";
-      soundSource2.type = "audio/mpeg";
-      audio2.appendChild(soundSource2);
-      document.body.appendChild(audio2);
-    }
-
-    if (!audio1.paused || clicked) {
-      soundPlayBtn.classList.add("on");
-    } else {
-      soundPlayBtn.classList.add("off");
-    }
-
-    // 재생 버튼 음악 재생
-    soundPlayBtn.addEventListener("click", () => {
-      soundPlayBtn.classList.toggle("on");
-      soundPlayBtn.classList.toggle("off");
-
-      if (soundPlayBtn.classList.contains("off")) {
-        audio2.pause();
-      } else if (soundPlayBtn.classList.contains("on")) {
-        audio2.play();
-      }
-    });
-
-    // 화면밖으로 나갔을때 오디오 정지
-    document.addEventListener("visibilitychange", function () {
-      if (document.visibilityState === "hidden" && !audio2.paused) {
-        audio2.pause();
-        soundPlayBtn.classList.add("off");
-        soundPlayBtn.classList.remove("on");
-      }
-    });
+    // animation 실행 후 intro 요소 제거
+    setTimeout(function () {
+      introArea.parentNode.removeChild(introArea);
+    }, 5100);
   },
 
   // 최상단 텍스트 애니메이션
