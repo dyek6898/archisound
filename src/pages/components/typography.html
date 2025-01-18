@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset="utf-8" />
+    <title>project components guide</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../../assets/images/icon/ico_favicon.png"
+    />
+    <link
+      href="../../assets/styles/component_guide.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="uid-container none-source">
+      @@include('_component_header.html')
+      @@include('_component_navigation.html')
+
+      <main class="uid-main">
+        <h1 class="uid-title01">Typography 설정</h1>
+        <p class="uid-desc">
+          변수에 제목 및 본문텍스트에 사용되는 폰트 스타일을 정의합니다.
+        </p>
+
+        <section class="uid-component">
+          <h2 class="uid-title02">font-weight 클래스</h2>
+          <ul class="uid-list">
+            <li>아래의 폰트는 프로젝트별 맞는 폰트로 셋팅하여 사용합니다.</li>
+            <li>폰트는 한글 Pretendard, 영문/숫자 Prompt를 사용합니다</li>
+            <li>
+              폰트 굵기는 Regular(400- 기본), Medium(500), SemiBold(600),
+              Bold(700) 총 4가지종류입니다.
+            </li>
+          </ul>
+          <div class="code_preview uid-demo"></div>
+          <div class="code_info">
+            <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="Copy!">
+              Copy to clipboard
+            </button>
+          </div>
+          <textarea class="code_content html ui_code_content" data-code="html">
+<div class="uid-datatable">
+  <table>
+    <caption>Typeface 컴포넌트 테이블 : Type, Style, Weight, Size</caption>
+    <colgroup>
+      <col width="20%">
+      <col width="30%">
+      <col width="20%">
+      <col width="30%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="row">Type</th>
+        <th scope="row">Style</th>
+        <th scope="row">Weight</th>
+        <th scope="row">Size</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+            한글
+        </td>
+        <td>
+            <h3 class="fw_b">Pretendard</h3>
+        </td>
+        <td>
+            <p class="fw_b">Bold</p>
+        </td>
+        <td>
+            <p class="fw_b">가나다라마바사아자차카파타하</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+            <p class="fw_sb">SemiBold</p>
+        </td>
+        <td>
+            <p class="fw_sb">가나다라마바사아자차카파타하</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+            <p class="fw_m">Medium</p>
+        </td>
+        <td>
+            <p class="fw_m">가나다라마바사아자차카파타하</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+            <p>Regular</p>
+        </td>
+        <td>
+            <p>가나다라마바사아자차카파타하</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="uid-datatable prompt">
+  <table>
+    <caption>Typeface 컴포넌트 테이블 : Type, Style, Weight, Size</caption>
+    <colgroup>
+      <col width="20%">
+      <col width="30%">
+      <col width="20%">
+      <col width="30%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="row">Type</th>
+        <th scope="row">Style</th>
+        <th scope="row">Weight</th>
+        <th scope="row">Size</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+            영문/숫자
+        </td>
+        <td>
+            <h3 class="fw_b">Prompt</h3>
+        </td>
+        <td>
+            <p class="fw_b">Bold</p>
+        </td>
+        <td>
+            <p class="fw_b">ABCDEFGHIJKLMN123456789</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+            <p class="fw_m">Medium</p>
+        </td>
+        <td>
+            <p class="fw_m">ABCDEFGHIJKLMN123456789</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td>
+            <p>Regular</p>
+        </td>
+        <td>
+            <p>ABCDEFGHIJKLMN123456789</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+          </textarea>
+        </section>
+
+        <section class="uid-component">
+          <h2 class="uid-title02">Mixin Font</h2>
+          <ul class="uid-list">
+            <li>
+              font mixin에는 $fontsize, $fontweight, $device, $eng의 변수가
+              있습니다.
+            </li>
+            <li>
+              - $fontsize = font-size
+              <br />
+              - $fontweight = font-weight이며 r,m,sb,b 총 4가지로
+              <br />
+              (r=400,m=500,sb=600,b=700)
+              <br />
+              - $device = PC일 경우 font 단위는 vw, MO일 경우 font 단위 rem
+              <br />
+              - $eng = 영문폰트 사용 여부 맟 line-height: 1.1;
+            </li>
+          </ul>
+          <div class="code_preview uid-demo"></div>
+          <div class="code_info">
+            <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="Copy!">
+              Copy to clipboard
+            </button>
+          </div>
+          <textarea class="code_content html ui_code_content" data-code="html">
+<div class="uid-datatable">
+  <table>
+    <caption>Typeface 컴포넌트 테이블 : Type, Style, Weight, Size</caption>
+    <colgroup>
+      <col width="30%">
+      <col width="15%">
+      <col width="20%">
+      <col width="15%">
+      <col width="20%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="row">Mixin 적용</th>
+        <th scope="row">$fontsize(font-size)</th>
+        <th scope="row">$fontweight(font-weight)</th>
+        <th scope="row">$device(font 단위)</th>
+        <th scope="row">$eng(영문폰트 사용)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          @include font(13, r, pc);
+        </td>
+        <td>
+            <h3>13px</h3>
+        </td>
+        <td>
+            <p>400</p>
+        </td>
+        <td>
+            <p>단위 : vw</p>
+        </td>
+        <td>
+            <p>X</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          @include font(16, m, mo);
+        </td>
+        <td>
+            <h3>16px</h3>
+        </td>
+        <td>
+            <p>500</p>
+        </td>
+        <td>
+            <p>단위 : rem</p>
+        </td>
+        <td>
+            <p>X</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          @include font(20, sb, pc, eng);
+        </td>
+        <td>
+            <h3>20px</h3>
+        </td>
+        <td>
+            <p>600</p>
+        </td>
+        <td>
+            <p>단위 : vw</p>
+        </td>
+        <td>
+            <p>O</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          @include font(24, b, mo, eng);
+        </td>
+        <td>
+            <h3>24px</h3>
+        </td>
+        <td>
+            <p>700</p>
+        </td>
+        <td>
+            <p>단위 : rem</p>
+        </td>
+        <td>
+            <p>O</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+          </textarea>
+        </section>
+      </main>
+
+      @@include('_component_footer.html')
+    </div>
+    <script src="../../assets/scripts/component_guide.js"></script>
+    <script type="module" src="../../assets/scripts/common.js"></script>
+    <script></script>
+  </body>
+</html>

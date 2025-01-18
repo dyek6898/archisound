@@ -1,0 +1,540 @@
+@use "../abstracts" as *;
+// 공통 input 영역
+.archi-component {
+  &-input {
+    position: relative;
+    input {
+      width: 100%;
+      @include vw(height, 80);
+      @include vw(padding, 0 140 0 32);
+      @include font(22, r, pc);
+      @include vw(border, 3px solid $gray-000);
+    }
+    .utill-btn-area {
+      position: absolute;
+      @include vw(top, 20);
+      @include vw(right, 32);
+      display: flex;
+      align-items: center;
+      button {
+        + button {
+          @include vw(margin-left, 16);
+        }
+      }
+      .btn-clear {
+        @include vw(width, 32);
+        @include vw(height, 32);
+        background: url(../images/icon/ico_cancel.png) center / 100% 100%
+          no-repeat;
+        visibility: hidden;
+      }
+      .btn-search {
+        @include vw(width, 40);
+        @include vw(height, 40);
+        background: url(../images/icon/ico_search_large.png) center / 100% 100%
+          no-repeat;
+      }
+    }
+
+    textarea {
+      width: 100%;
+      @include vw(padding, 21.5 32);
+      @include font(22, r, pc);
+      @include vw(border, 3px solid $gray-000);
+      resize: none;
+    }
+  }
+  &-checkbox {
+    position: relative;
+    display: grid;
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: visible;
+      opacity: 0;
+      &:checked {
+        & + label {
+          @include font(18, m, pc);
+          @include vw(border, 1px solid $primary);
+          background: $primary;
+        }
+      }
+    }
+    .checkbox-input-label {
+      position: relative;
+      display: inline-flex;
+      // @include vw(width, 136);
+      @include vw(padding, 12.5 28);
+      @include vw(height, 56);
+      @include font(18, r, pc);
+      color: $gray_000;
+      @include vw(border, 1px solid #ebebeb);
+      @include vw(border-radius, 50);
+      background: #ebebeb;
+      align-items: center;
+      justify-content: center;
+    }
+
+    // small check
+    &.small {
+      input {
+        &:checked {
+          + label {
+            &::before {
+              background: $primary;
+              @include vw(border, 1px solid $primary);
+            }
+            &::after {
+              content: "";
+              display: block;
+              position: absolute;
+              @include vw(top, 11);
+              @include vw(left, 5);
+              @include vw(width, 14);
+              @include vw(height, 10);
+              background: url(../images/icon/ico_checked.png) no-repeat;
+              background-size: 100% auto;
+            }
+          }
+        }
+      }
+      .checkbox-input-label {
+        @include vw(padding, 0 0 0 36);
+        width: auto;
+        height: auto;
+        justify-content: flex-end;
+        background: none;
+        border-radius: 0;
+        border: none;
+        color: $gray-fff;
+        @include font(20, m, pc);
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          @include vw(top, 5);
+          left: 0;
+          @include vw(width, 24);
+          @include vw(height, 24);
+          @include vw(border-radius, 4);
+          @include vw(border, 1px solid #999);
+          background: $gray-fff;
+        }
+      }
+    }
+  }
+  &-radio {
+    position: relative;
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: visible;
+      opacity: 0;
+      &:checked {
+        & + label {
+          &:before {
+            background-color: $primary;
+            border-color: $primary;
+          }
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 31%;
+            @include vw(left, 8);
+            // transform: translateY(-50%);
+            @include vw(width, 12);
+            @include vw(height, 12);
+            border-radius: 50%;
+            background: $gray_fff;
+          }
+        }
+      }
+    }
+    .radio-input-label {
+      position: relative;
+      display: inline-block;
+      @include vw(padding-left, 38);
+      @include font(22, r, pc);
+      color: $gray_000;
+      &::before {
+        content: "";
+        position: absolute;
+        @include vw(top, 4);
+        left: 0;
+        @include vw(width, 28);
+        @include vw(height, 28);
+        background: $gray_fff;
+        border: 1px solid $gray_999;
+        border-radius: 100%;
+      }
+    }
+  }
+  &-switch {
+    position: absolute;
+    @include vw(width, 134);
+    @include vw(height, 36);
+    @include vw(border, 2px solid $border_color01);
+    @include vw(border-radius, 30);
+    &.eng {
+      input {
+        & + label {
+          &::before {
+            @include vw(left, 64);
+          }
+          &::after {
+            color: $gray-000;
+          }
+          span {
+            color: $gray-777;
+          }
+        }
+      }
+    }
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      opacity: 0;
+      z-index: 3;
+    }
+    .checkbox-input-label {
+      position: absolute;
+      inset: 0 0 0 0;
+      z-index: 2;
+      span {
+        position: absolute;
+        @include vw(top, 9);
+        @include vw(left, 15);
+        display: inline-block;
+        @include vw(width, 40);
+        @include vw(height, 10);
+        @include font(16, m, pc, eng);
+        z-index: 1;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        @include vw(top, -2);
+        @include vw(left, -2);
+        @include vw(width, 68);
+        @include vw(height, 36);
+        @include vw(border, 2px solid $gray-000);
+        @include vw(border-radius, 40);
+        transition: 0.3s ease all;
+      }
+      &::after {
+        content: "ENG";
+        position: absolute;
+        @include vw(top, 9);
+        @include vw(right, 13);
+        @include vw(width, 36);
+        @include vw(height, 10);
+        color: $gray-777;
+        @include font(16, m, pc, eng);
+        transition: 0.3s ease all;
+      }
+    }
+  }
+  &-dropdown {
+    position: relative;
+    display: inline-block;
+    .dropdown-tit {
+      position: relative;
+      display: inline-flex;
+      @include vw(width, 256);
+      @include vw(height, 80);
+      @include vw(padding, 22 32);
+      color: $gray_000;
+      @include font(22, r, pc);
+      @include vw(border, 3px solid $gray-000);
+      align-items: center;
+      &::after {
+        content: "";
+        position: absolute;
+        @include vw(top, 19);
+        @include vw(right, 32);
+        @include vw(width, 40);
+        @include vw(height, 40);
+        background: url(../images/icon/ico_arrow_down.png) center / 100% 100%
+          no-repeat;
+        transition: all 0.1s ease;
+      }
+    }
+    .dropwdwon-option {
+      display: none;
+      position: absolute;
+      @include vw(top, 77);
+      @include vw(width, 256);
+      color: $gray_000;
+      @include font(22, r, pc);
+      @include vw(border, 3px solid $gray-000);
+      border-top: 0;
+      z-index: 1;
+      li {
+        @include vw(padding, 22 32);
+        background: $gray-fff;
+        &:hover {
+          font-weight: 700;
+          background: $bg_color03;
+        }
+      }
+    }
+    &.on {
+      .dropdown-tit {
+        border-bottom-color: $gray-fff;
+        &::after {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+  }
+}
+
+// MO
+@media (max-width: 1024px) {
+  .archi-component {
+    &-input {
+      .utill-btn-area {
+        @include rem(top, 15);
+        @include rem(right, 24);
+        .btn-clear,
+        .btn-search {
+          @include rem(width, 24);
+          @include rem(height, 24);
+        }
+        .btn-search {
+          background: url(../images/icon/ico_search_mo.png) no-repeat
+            center/100% 100%;
+        }
+        button {
+          + button {
+            @include rem(margin-left, 12);
+          }
+        }
+      }
+      input {
+        @include rem(height, 56);
+        @include rem(padding, 0 60 0 24);
+        @include font(16, r, mo);
+        @include rem(border, 2px solid $gray-000);
+        border-radius: 0;
+      }
+      textarea {
+        @include rem(padding, 16.5 24);
+        @include font(16, r, mo);
+        @include rem(border, 2px solid $gray-000);
+        border-radius: 0;
+      }
+    }
+    &-checkbox {
+      input {
+        &:checked {
+          & + label {
+            @include font(16, m, mo);
+            @include rem(border, 1px solid $primary);
+          }
+        }
+      }
+      .checkbox-input-label {
+        width: fit-content;
+        @include rem(height, 40);
+        @include font(16, r, mo);
+        @include rem(padding, 6.5 20);
+        @include rem(border-radius, 50);
+      }
+
+      // snall check
+      &.small {
+        input {
+          &:checked {
+            + label {
+              &::before {
+                background: $primary;
+                @include rem(border, 1px solid $primary);
+              }
+              &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                @include rem(top, 9);
+                @include rem(left, 5);
+                @include rem(width, 14);
+                @include rem(height, 10);
+                background: url(../images/icon/ico_checked.png) no-repeat;
+                background-size: 100% auto;
+              }
+            }
+          }
+        }
+        .checkbox-input-label {
+          @include rem(padding, 0 0 0 36);
+          width: auto;
+          height: auto;
+          justify-content: flex-end;
+          background: none;
+          border-radius: 0;
+          border: none;
+          color: $gray-fff;
+          @include font(18, m, mo);
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            @include rem(top, 4);
+            left: 0;
+            @include rem(width, 24);
+            @include rem(height, 24);
+            @include rem(border-radius, 4);
+            @include rem(border, 1px solid #999);
+            background: $gray-fff;
+          }
+        }
+      }
+    }
+    &-radio {
+      input {
+        &:checked {
+          & + label {
+            &:before {
+              background-color: $primary;
+              border-color: $primary;
+            }
+            &::after {
+              @include rem(top, 7);
+              // top: 50%;
+              // transform: translateY(-50%);
+              @include rem(left, 6);
+              @include rem(width, 12);
+              @include rem(height, 12);
+            }
+          }
+        }
+      }
+      .radio-input-label {
+        @include rem(padding-left, 32);
+        @include font(16, r, mo);
+        &::before {
+          @include rem(top, 1);
+          @include rem(width, 24);
+          @include rem(height, 24);
+        }
+      }
+    }
+    &-dropdown {
+      width: 100%;
+      .dropdown-tit {
+        position: relative;
+        display: inline-flex;
+        width: 100%;
+        @include rem(height, 56);
+        @include rem(padding, 16 24);
+        @include font(16, m, mo);
+        @include rem(border, 2px solid $gray-000);
+        &::after {
+          @include rem(top, 16);
+          @include rem(right, 24);
+          @include rem(width, 24);
+          @include rem(height, 24);
+        }
+      }
+      .dropwdwon-option {
+        @include rem(top, 54);
+        width: 100%;
+        color: $gray_000;
+        @include font(16, r, mo);
+        @include rem(border, 2px solid $gray-000);
+        border-top: 0;
+        z-index: 1;
+        li {
+          @include rem(padding, 14.5 24);
+        }
+      }
+    }
+    &-switch {
+      position: absolute;
+      // @include rem(top, 88);
+      // @include rem(right, 20);
+      @include rem(width, 112);
+      @include rem(height, 36);
+      @include rem(border, 2px solid $border_color01);
+      @include rem(border-radius, 30);
+      &.eng {
+        input {
+          & + label {
+            &::before {
+              @include rem(left, 49);
+            }
+            &::after {
+              color: $gray-000;
+            }
+            span {
+              color: $gray-777;
+            }
+          }
+        }
+      }
+      input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        opacity: 0;
+        z-index: 3;
+      }
+      .checkbox-input-label {
+        position: absolute;
+        inset: 0 0 0 0;
+        z-index: 2;
+        span {
+          color: $gray_000;
+          position: absolute;
+          @include rem(top, 9);
+          @include rem(left, 13);
+          display: inline-block;
+          @include rem(width, 40);
+          @include rem(height, 10);
+          @include font(14, m, mo, eng);
+          z-index: 1;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          @include rem(top, -2);
+          @include rem(left, -2);
+          @include rem(width, 60);
+          @include rem(height, 36);
+          @include rem(border, 2px solid $gray-000);
+          @include rem(border-radius, 40);
+          transition: 0.3s ease all;
+        }
+        &::after {
+          content: "ENG";
+          position: absolute;
+          @include rem(top, 9);
+          @include rem(right, 7);
+          @include rem(width, 36);
+          @include rem(height, 10);
+          color: $gray-777;
+          @include font(14, m, mo, eng);
+          transition: 0.3s ease all;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+@use "../abstracts" as *;
+
+.modal-dimm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  opacity: 0;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-wrap {
+  .modal-frame {
+    display: none;
+    position: fixed;
+    @include vw(width, 680);
+    height: fit-content;
+    inset: 0 0 0 0;
+    margin: auto;
+    background: #fff;
+    z-index: 110;
+    opacity: 0;
+  }
+
+  .modal-container {
+    width: 100%;
+    // modal header
+    .modal-header {
+      @include vw(padding, 32 32 8);
+      .header-tit {
+        @include font(28, b, pc);
+      }
+    }
+    // modal content
+    .modal-content {
+      @include vw(min-height, 250);
+      @include vw(max-height, 700);
+      overflow-y: scroll;
+      @include vw(margin, 24 0 40);
+      @include vw(padding, 0 32);
+      &::-webkit-scrollbar {
+        width: 4px;
+        background-color: #eee;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $primary;
+      }
+    }
+  }
+
+  .md-close {
+    position: absolute;
+    @include vw(width, 40);
+    @include vw(height, 40);
+    @include vw(top, 34);
+    @include vw(right, 32);
+    pointer-events: all;
+    background: url(../images/icon/ico_close.png) center / 100% 100% no-repeat;
+  }
+}
+
+// MO
+@media (max-width: 1024px) {
+  .modal-wrap {
+    .modal-frame {
+      @include rem(width, 335);
+      &.full {
+        width: 100%;
+        height: 100%;
+        .modal-content {
+          min-height: 100%;
+          max-height: 100%;
+          margin: 0;
+          @include rem(padding, 20 20 132);
+        }
+      }
+    }
+    .modal-container {
+      .modal-header {
+        @include rem(padding, 24 52 12 20);
+        .header-tit {
+          @include font(22, b, mo);
+        }
+      }
+      .modal-content {
+        @include rem(min-height, 310);
+        @include rem(max-height, 450);
+        @include rem(padding, 0 20);
+        @include rem(margin, 20 0);
+      }
+    }
+    .md-close {
+      @include rem(top, 30);
+      @include rem(right, 20);
+      @include rem(width, 24);
+      @include rem(height, 24);
+      background: url(../images/icon/ico_close_mo.png) center/100% 100%
+        no-repeat;
+    }
+  }
+}

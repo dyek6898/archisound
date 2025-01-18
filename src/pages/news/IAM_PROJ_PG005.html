@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset="utf-8" />
+    <title>프로젝트타이틀</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../../assets/images/icon/ico_favicon.png"
+    />
+    <link
+      href="../../assets/styles/content.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="wrap" class="archi-pr-center">
+      @@include('_header.html', { "title": "test_title01", "title02":
+      "test_title02" })
+      <!-- 게시판 상세보기 영역 -->
+      <div class="archi-sub-content-group detail">
+        <div class="content-inner small">
+          <div class="archi-pr-detail">
+            <!-- 타이틀 -->
+            <div class="archi-badge-wrap">
+              <span class="archi-component-button badge set-opacity-0"
+                >뉴스</span
+              >
+            </div>
+            <div class="tit-area set-opacity-0">
+              <div class="text-line">
+                <h2 class="text-row tit"
+                  >아키사운드의 임우승 대표이사 국회의원상 수상</h2
+                >
+              </div>
+              <div class="date">2023. 12. 05</div>
+            </div>
+            <!-- 내용 -->
+            <div class="detail-cont-wrap set-opacity-0">
+              <div class="inner">
+                <img
+                  src="../../assets/images/content/img_board_sample.jpg"
+                  alt=""
+                />
+                영국 파이낸셜 타임즈가 아시아 태평양 지역 고성장 기업(FT High
+                Growth Companies Asia-Pacific 2023)을 발표했습니다. 파이낸셜
+                타임즈와 글로벌 리서치 전문기관 스태티스타(Statista)는 매년
+                아시아 태평양의 13개 국가의 기업 중 높은 성장률을 보인 500개
+                기업의 순위를 조사해 공개합니다. 올해까지 총 5번 발표했으며
+                아키사운드가 음향업계에서는 최초로 3회 연속 선정되었습니다.
+                올해는 245위에 랭크되었으며. 2021년은 62위, 2022년은 327위로
+                이름을 올렸습니다.2023년 전체 상위 500개 기업 중에 일본이 136개,
+                한국이 78개, 싱가포르 75개. 인도 73개, 호주 63개 등이 뒤를
+                이었습니다.
+              </div>
+              <div class="file-wrap">
+                <div class="file-tit">첨부파일</div>
+                <button class="btn-file">
+                  <div class="file-detail">고성장 기업 선정 인증서.pdf</div>
+                  <i class="ico-download" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="archi-page-control set-opacity-0">
+            <!-- 게시글 없을 시 nodata 추가 -->
+            <a href="#" class="link-page prev nodata">
+              <div class="control-tit">이전 글</div>
+              <div class="main-tit">이전 게시글이 없습니다.</div>
+            </a>
+            <a href="#" class="link-page next">
+              <div class="control-tit">다음 글</div>
+              <div class="main-tit">
+                ㈜아키사운드 ‘2022 아시아 태평양 지역의 고성장 기업(High-Growth
+                Companies Asia-Pacific)
+              </div>
+            </a>
+          </div>
+          <div class="archi-btn-wrap">
+            <button class="archi-component-button btn-more set-opacity-0"
+              >VIEW LIST</button
+            >
+          </div>
+        </div>
+      </div>
+
+      @@include('_footer.html')
+    </div>
+    <div class="dimm"></div>
+  </body>
+  <script type="module" src="../../assets/scripts/common.js"></script>
+  <script type="module" src="../../assets/scripts/pageComp/center.js"></script>
+</html>

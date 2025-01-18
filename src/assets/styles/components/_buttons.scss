@@ -1,0 +1,98 @@
+@use "../abstracts" as *;
+
+// 컴포넌트 - 버튼
+.archi-component-button {
+  &.btn-more {
+    position: relative;
+    display: flex;
+    width: 100%;
+    @include vw(max-width, 306);
+    @include vw(height, 74);
+    color: $gray-000;
+    @include font(24, b, pc, eng);
+    background: $gray_fff;
+    @include vw(border, 3px solid $gray-000);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0 0 0 0;
+      background: $gray-000;
+      transform: translateY(100%);
+      transition: 0.2s ease;
+    }
+    &:hover {
+      background: none;
+      color: $gray-fff;
+
+      &::before {
+        transform: translateY(0);
+      }
+    }
+  }
+  &.underline {
+    display: inline-flex;
+    align-items: center;
+    .txt {
+      @include font(20, r, pc);
+      color: #555555;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .ico-reset {
+      @include vw(margin-left, 4);
+      &.ico-reset {
+        @include vw(width, 16);
+        @include vw(height, 16);
+        background: url(../images/icon/ico_reset.png) no-repeat center/cover;
+      }
+    }
+  }
+  &.badge {
+    background: $gray-000;
+    @include vw(padding, 8 24);
+    color: $gray-fff;
+    @include font(20, b, pc);
+  }
+}
+
+@media (max-width: 1024px) {
+  .archi-component-button {
+    &.btn-more {
+      @include font(16, b, mo);
+      @include rem(border, 2px solid $gray-000);
+      width: 100%;
+      @include rem(max-width, 220);
+      @include rem(height, 60);
+    }
+    &.primary {
+      max-width: 100%;
+      background: $primary;
+      border: none;
+      @include font(18, b, mo);
+      .btn-popup {
+        position: relative;
+        @include rem(padding-right, 32);
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 40%;
+          transform: translateY(-50%);
+          right: 0;
+          @include rem(width, 24);
+          @include rem(height, 24);
+          background: url(../images/icon/ico_plus.png) no-repeat center/cover;
+        }
+      }
+    }
+
+    &.badge {
+      @include rem(padding, 4 16);
+      @include font(14, b, mo);
+    }
+  }
+}

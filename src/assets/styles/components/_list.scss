@@ -1,0 +1,216 @@
+@use "../abstracts" as *;
+
+// 공통 전체갯수
+.list-count {
+  @include vw(margin-bottom, 16);
+  .type-txt {
+    display: flex;
+    align-items: center;
+    @include font(24, b, pc);
+    line-height: normal;
+    span {
+      @include font(32, b, pc);
+      @include vw(margin, 0 4 0 12);
+      color: $gray-000;
+      &.point {
+        color: $primary;
+      }
+    }
+  }
+}
+
+.archi-list-wrap {
+  @include vw(margin-top, 80);
+  .row-list {
+    counter-reset: list;
+    display: grid;
+    @include vw(row-gap, 80);
+    @include vw(column-gap, 40);
+    grid-template-columns: repeat(3, 1fr);
+    > li {
+      @include vw(border-top, 4px solid #000);
+      + li {
+        // @include vw(margin-left, 40);
+      }
+      .list-link {
+        // &:hover {
+        //   img {
+        //     filter: blur(10px);
+        //   }
+        // }
+      }
+      // .lottie-test {
+      //   position: absolute;
+      //   z-index: 2;
+      // }
+      .row-inner {
+        .top-area {
+          display: flex;
+          justify-content: space-between;
+          @include font(18, m, pc);
+          @include vw(margin-top, 20);
+          overflow: hidden;
+          &::before {
+            content: "0" counter(list);
+            counter-increment: list;
+            @include font(18, m, pc);
+          }
+
+          .type-r {
+            display: flex;
+            @include font(18, m, pc);
+            span + span {
+              @include vw(margin-left, 24);
+              position: relative;
+              &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                @include vw(left, -13);
+                @include vw(top, 8);
+                // left: -12%;
+                // top: 50%;
+                // transform: translateY(-50%);
+                @include vw(width, 1);
+                @include vw(height, 12);
+                background: $gray_999;
+              }
+            }
+          }
+        }
+        .img-area {
+          position: relative;
+          @include vw(margin-top, 12);
+          max-width: 100%;
+          @include vw(height, 704);
+          overflow: hidden;
+          &::before {
+            position: absolute;
+            content: "";
+            display: block;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: all 0.2s ease-out;
+          }
+          &:hover {
+            &::before {
+              backdrop-filter: blur(15px);
+            }
+            // .hover-lottie {
+            //   opacity: 1;
+            // }
+          }
+          > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 50%;
+            display: block;
+          }
+          .img-mask {
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            position: absolute;
+            inset: auto 0 0 0;
+            z-index: 2;
+          }
+          .hover-lottie {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            inset: 0 0 0 0;
+            // opacity: 0;
+            // transition: all 0.2s ease-out;
+          }
+        }
+
+        .tit-area {
+          @include vw(margin-top, 32);
+          .col-tit {
+            @include font(32, b, pc);
+            white-space: normal;
+            @include ellipsis(2);
+            @include vw(max-height, 108);
+          }
+        }
+      }
+    }
+  }
+}
+
+// MO
+@media (max-width: 1024px) {
+  //공통 전체갯수
+  .list-count {
+    @include rem(margin-bottom, 12);
+    .type-txt {
+      @include font(16, b, mo);
+      span {
+        color: $gray-000;
+        @include font(20, b, mo);
+        @include rem(margin, 0 0 0 4);
+        &.point {
+          color: $primary;
+          @include font(20, b, mo);
+        }
+      }
+    }
+  }
+
+  .archi-list-wrap {
+    @include rem(margin-top, 48);
+    .row-list {
+      @include rem(row-gap, 48);
+      @include rem(column-gap, 0);
+      grid-template-columns: repeat(1, 1fr);
+      > li {
+        @include rem(border-top, 3px solid #000);
+        .row-inner {
+          .top-area {
+            @include rem(margin-top, 19);
+            &::before {
+              content: "0" counter(list);
+              counter-increment: list;
+              @include font(14, m, mo);
+            }
+
+            .type-r {
+              @include font(14, m, mo);
+              span + span {
+                @include rem(margin-left, 16);
+                &::before {
+                  @include rem(left, -8);
+                  @include rem(top, 5);
+                  @include rem(width, 1);
+                  @include rem(height, 12);
+                }
+              }
+            }
+          }
+
+          .img-area {
+            @include rem(margin-top, 8);
+            @include rem(height, 424);
+            &:hover {
+              &::before {
+                backdrop-filter: none;
+              }
+            }
+          }
+
+          .tit-area {
+            @include rem(margin-top, 16);
+            .col-tit {
+              @include font(20, b, mo);
+              @include rem(min-height, 32);
+              @include rem(max-height, 68);
+            }
+          }
+        }
+      }
+    }
+  }
+}

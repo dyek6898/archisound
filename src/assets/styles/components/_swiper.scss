@@ -1,0 +1,326 @@
+@use "../abstracts" as *;
+.archi-component-swiper {
+  &.type-thumb {
+    .swiper {
+      font-size: 0;
+      .swiper-wrapper {
+        .swiper-slide {
+          width: 100%;
+          height: auto;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 50%;
+          }
+        }
+      }
+
+      &.thumbs-top {
+        .swiper-slide {
+          @include vw(height, 1024);
+        }
+        .swiper-button {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          z-index: 2;
+          background: $gray_fff;
+          @include vw(width, 232);
+          @include vw(height, 88);
+          [class^="swiper-button"] {
+            @include vw(width, 72);
+            @include vw(height, 72);
+            margin-top: 0;
+            top: inherit;
+            bottom: 0;
+            &::after {
+              font-family: none;
+              font-size: 0;
+              @include vw(width, 72);
+              @include vw(height, 72);
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+          }
+          .swiper-button-prev {
+            @include vw(left, 32);
+            &::after {
+              background-image: url(../images/icon/ico_swiper_l.png);
+            }
+            &:hover {
+              &::after {
+                background-image: url(../images/icon/ico_swiper_l_on.png);
+              }
+            }
+          }
+          .swiper-button-next {
+            @include vw(right, 16);
+            &::after {
+              background-image: url(../images/icon/ico_swiper_r.png);
+            }
+            &:hover {
+              &::after {
+                background-image: url(../images/icon/ico_swiper_r_on.png);
+              }
+            }
+          }
+        }
+      }
+
+      &.thumbs-info {
+        @include vw(margin-top, 40);
+        .swiper-wrapper {
+          // @include vw(padding-left, 320);
+          // justify-content: center;
+          width: fit-content;
+          margin: 0 auto;
+          .swiper-slide {
+            opacity: 0.5;
+            @include vw(height, 238);
+            &.swiper-slide-thumb-active {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.type-num {
+    .swiper {
+      &.number {
+        .swiper-slide {
+          > img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .swiper-navi-wrap {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          @include vw(margin-top, 20);
+        }
+        .swiper-pagination {
+          display: flex;
+          align-items: center;
+          width: auto;
+          position: static;
+          @include font(20, m, pc, eng);
+          line-height: normal;
+          letter-spacing: 0;
+          .current {
+            color: $primary;
+          }
+          .bar {
+            @include vw(margin, 0 8);
+            display: block;
+            @include vw(width, 16);
+            @include vw(height, 3);
+            background: $gray-000;
+          }
+        }
+        .swiper-btn-area {
+          display: flex;
+          justify-content: flex-end;
+
+          [class^="swiper-button"] {
+            position: static;
+            margin-top: 0;
+            &::after {
+              font-family: none;
+              font-size: 0;
+              @include vw(width, 32);
+              @include vw(height, 32);
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: 100% auto;
+            }
+          }
+          .swiper-button-prev {
+            &::after {
+              background-image: url(../images/icon/ico_busi_swiper_l.png);
+            }
+          }
+          .swiper-button-next {
+            @include vw(margin-left, 16);
+            &::after {
+              background-image: url(../images/icon/ico_busi_swiper_r.png);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.type-bar {
+    .swiper {
+      &.progressbar {
+        .swiper-slide {
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .archi-component-swiper {
+    // 커스텀 페이지네이션
+    .swiper-pagination {
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      width: auto;
+      position: static;
+      @include font(20, m, mo, eng);
+      line-height: normal;
+      letter-spacing: 0;
+      .current {
+        color: $primary;
+      }
+      .bar {
+        @include rem(margin, 0 8);
+        @include rem(width, 16);
+        @include rem(height, 3);
+        background: $gray-000;
+      }
+    }
+
+    &.type-num {
+      .swiper {
+        &.number {
+          .swiper-navi-wrap {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            @include rem(margin-top, 24);
+            .swiper-pagination {
+              @include font(20, m, mo, eng);
+              .bar {
+                @include rem(margin, 0 8);
+                @include rem(width, 16);
+                @include rem(height, 3);
+              }
+            }
+          }
+          .swiper-btn-area {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &.type-list {
+      .swiper {
+        &.number {
+          @include rem(margin-top, 40);
+          @include rem(padding, 0 20);
+          .row-list {
+            counter-reset: list;
+            .row-inner {
+              @include rem(padding-top, 12);
+              @include rem(border-top, 3 solid $gray-000);
+              .top-area {
+                display: flex;
+                justify-content: space-between;
+                &::before {
+                  content: "0" counter(list);
+                  counter-increment: list;
+                  @include font(14, m, mo);
+                }
+
+                .type-r {
+                  @include font(14, m, mo);
+                  span + span {
+                    @include rem(margin-left, 16);
+                    &::before {
+                      @include rem(left, -10);
+                      @include rem(top, 1);
+                      @include rem(width, 1);
+                      @include rem(height, 12);
+                    }
+                  }
+                }
+              }
+
+              .img-area {
+                @include rem(margin-top, 8);
+                @include rem(height, 400);
+                > img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                  object-position: 50% 50%;
+                }
+              }
+
+              .tit-area {
+                @include rem(margin-top, 16);
+                .col-tit {
+                  @include font(20, b, mo);
+                  @include ellipsis(2);
+                  @include rem(min-height, 32);
+                  @include rem(max-height, 68);
+                }
+              }
+            }
+          }
+
+          .swiper-pagination {
+            @include rem(margin-top, 24);
+            display: flex;
+            align-items: center;
+            width: auto;
+            position: static;
+            @include font(20, m, mo, eng);
+            line-height: normal;
+            letter-spacing: 0;
+            .current {
+              color: $primary;
+            }
+            .bar {
+              @include rem(margin, 0 8);
+              @include rem(width, 16);
+              @include rem(height, 3);
+              background: $gray-000;
+            }
+          }
+        }
+      }
+    }
+
+    &.type-thumb {
+      .swiper {
+        .swiper-wrapper {
+          .swiper-slide {
+            @include rem(height, 240);
+          }
+        }
+      }
+      // PROJECT 상세 모바일시 thumb -> pagination
+      .swiper-pagination-wrap {
+        .swiper-pagination {
+          position: initial;
+          display: flex;
+          align-items: center;
+          @include rem(margin-top, 24);
+          @include font(20, m, mo, eng);
+          text-align: left;
+          .swiper-pagination-current {
+            color: $primary;
+            @include rem(min-width, 14);
+          }
+          .pagination-bar {
+            display: block;
+            @include rem(width, 16);
+            @include rem(height, 2.5);
+            background: $gray_000;
+            @include rem(margin, 0 8);
+          }
+        }
+      }
+    }
+  }
+}

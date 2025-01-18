@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset="utf-8" />
+    <title>프로젝트타이틀</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../../assets/images/icon/ico_favicon.png"
+    />
+    <link
+      href="../../assets/styles/content.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="wrap" class="archi-project">
+      @@include('_header.html', { "title": "test_title01", "title02":
+      "test_title02" })
+
+      <!-- 상단 비쥬얼 영역 -->
+      <div class="archi-sub-top-group">
+        <div class="tit-area">
+          <div class="text-line">
+            <h2 class="type-tit text-row set-opacity-0">PROJECT</h2>
+          </div>
+          <span class="type-sub-tit set-opacity-0">
+            맞춤형서비스를 통한 고객의 니즈에 최적화된 솔루션을 제공합니다.
+          </span>
+        </div>
+        <div class="img-area set-opacity-0">
+          <!-- pc 일때 -->
+          <img
+            src="../../assets/images/content/top_visual_project.jpg"
+            alt=""
+            class="pc-show"
+          />
+          <!-- mo 일때 -->
+          <img
+            src="../../assets/images/content/top_visual_project_mo.jpg"
+            alt=""
+            class="mo-show"
+          />
+        </div>
+      </div>
+
+      <!-- 컨텐츠 영역 -->
+      <div class="archi-sub-content-group mt-160">
+        <div class="content-inner">
+          <div class="project-search">
+            <div class="txt-l">
+              <div class="text-line">
+                <h3 class="text-row type-tit set-opacity-0">프로젝트 검색</h3>
+              </div>
+            </div>
+            <div class="cont-r set-opacity-0">
+              <div class="archi-search-wrap">
+                <div class="archi-textfield">
+                  <div class="archi-component-input">
+                    <input type="text" placeholder="검색어를 입력해주세요" />
+                    <div class="utill-btn-area">
+                      <button class="btn-clear"
+                        ><span class="hide-txt">삭제</span></button
+                      >
+                      <button class="btn-search"
+                        ><span class="hide-txt">검색</span></button
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="result-wrap">
+                  <ul class="result-list">
+                    <li>
+                      <span class="type-txt">#건축음향</span>
+                      <button type="button" class="btn-delete"
+                        ><span class="hide-txt">삭제</span></button
+                      >
+                    </li>
+                    <li>
+                      <span class="type-txt">#엔터테인먼트</span>
+                      <button type="button" class="btn-delete"
+                        ><span class="hide-txt">삭제</span></button
+                      >
+                    </li>
+                    <li>
+                      <span class="type-txt">#공간디자인</span>
+                      <button type="button" class="btn-delete"
+                        ><span class="hide-txt">삭제</span></button
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- mo 일때 -->
+              <div class="category-btn-wrap mo-show">
+                <button
+                  class="archi-component-button primary"
+                  data-modal-open="modal02"
+                  ><span class="btn-popup">카테고리 선택</span
+                  ><span class="hide-txt">팝업 열림</span></button
+                >
+                <button
+                  class="archi-component-button underline"
+                  type="button"
+                  data-modal-open="modal01"
+                >
+                  <span class="txt">프로젝트 카테고리 분류보기</span
+                  ><span class="hide-txt">팝업 열림</span>
+                </button>
+              </div>
+              <div class="category-wrap pc-show">
+                <div class="archi-form-group">
+                  <div class="form-tit-area">
+                    <span class="type-tit">사업분야</span>
+                  </div>
+                  <div class="form-area type-flex">
+                    <div class="archi-component-checkbox">
+                      <input
+                        type="checkbox"
+                        id="check-01"
+                        class="checkbox-input"
+                        checked
+                      />
+                      <label for="check-01" class="checkbox-input-label"
+                        >ALL</label
+                      >
+                    </div>
+                    <div class="archi-component-checkbox">
+                      <input
+                        type="checkbox"
+                        id="check-02"
+                        class="checkbox-input"
+                      />
+                      <label for="check-02" class="checkbox-input-label"
+                        >계획설계</label
+                      >
+                    </div>
+                    <div class="archi-component-checkbox">
+                      <input
+                        type="checkbox"
+                        id="check-03"
+                        class="checkbox-input"
+                      />
+                      <label for="check-03" class="checkbox-input-label"
+                        >중간설계</label
+                      >
+                    </div>
+                    <div class="archi-component-checkbox">
+                      <input
+                        type="checkbox"
+                        id="check-04"
+                        class="checkbox-input"
+                      />
+                      <label for="check-04" class="checkbox-input-label"
+                        >실시설계</label
+                      >
+                    </div>
+                    <div class="archi-component-checkbox">
+                      <input
+                        type="checkbox"
+                        id="check-05"
+                        class="checkbox-input"
+                      />
+                      <label for="check-05" class="checkbox-input-label"
+                        >시공단계 컨설팅</label
+                      >
+                    </div>
+                    <div class="archi-component-checkbox">
+                      <input
+                        type="checkbox"
+                        id="check-34"
+                        class="checkbox-input"
+                      />
+                      <label for="check-34" class="checkbox-input-label"
+                        >시공단계 책임시공</label
+                      >
+                    </div>
+                    <div class="archi-component-checkbox">
+                      <input
+                        type="checkbox"
+                        id="check-06"
+                        class="checkbox-input"
+                      />
+                      <label for="check-06" class="checkbox-input-label"
+                        >평가단계</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="archi-form-group">
+                  <div class="form-tit-area">
+                    <span class="type-tit">프로젝트 카테고리</span>
+                    <button
+                      class="archi-component-button underline"
+                      type="button"
+                      data-modal-open="modal01"
+                    >
+                      <span class="txt">자세히보기</span>
+                      <span class="hide-txt">팝업 열림</span>
+                    </button>
+                  </div>
+                  <div class="form-area type-flex">
+                    <div class="archi-component-checkbox">
+                      <input
+                        type="checkbox"
+                        id="check-07"
+                        class="checkbox-input"
+                      />
+                      <label for="check-07" class="checkbox-input-label"
+                        >ALL</label
+                      >
+                    </div>
+                    <div class="archi-component-checkbox">
+                      <input
+                        type="checkbox"
+                        id="check-08"
+                        class="checkbox-input"
+                      />
+                      <label for="check-08" class="checkbox-input-label"
+                        >Culture</label
+                      >
+                    </div>
+                    <div class="archi-component-checkbox">
+                      <input
+                        type="checkbox"
+                        id="check-09"
+                        class="checkbox-input"
+                      />
+                      <label for="check-09" class="checkbox-input-label"
+                        >Studio</label
+                      >
+                    </div>
+                    <div class="archi-component-checkbox">
+                      <input
+                        type="checkbox"
+                        id="check-10"
+                        class="checkbox-input"
+                      />
+                      <label for="check-10" class="checkbox-input-label"
+                        >Religion</label
+                      >
+                    </div>
+                    <div class="archi-component-checkbox">
+                      <input
+                        type="checkbox"
+                        id="check-11"
+                        class="checkbox-input"
+                      />
+                      <label for="check-11" class="checkbox-input-label"
+                        >Mixed-Use</label
+                      >
+                    </div>
+                    <div class="archi-component-checkbox">
+                      <input
+                        type="checkbox"
+                        id="check-31"
+                        class="checkbox-input"
+                      />
+                      <label for="check-31" class="checkbox-input-label"
+                        >Commercial</label
+                      >
+                    </div>
+                    <div class="archi-component-checkbox">
+                      <input
+                        type="checkbox"
+                        id="check-12"
+                        class="checkbox-input"
+                      />
+                      <label for="check-12" class="checkbox-input-label"
+                        >Leisure</label
+                      >
+                    </div>
+                    <div class="archi-component-checkbox">
+                      <input
+                        type="checkbox"
+                        id="check-13"
+                        class="checkbox-input"
+                      />
+                      <label for="check-13" class="checkbox-input-label"
+                        >Office</label
+                      >
+                    </div>
+                    <div class="archi-component-checkbox">
+                      <input
+                        type="checkbox"
+                        id="check-14"
+                        class="checkbox-input"
+                      />
+                      <label for="check-14" class="checkbox-input-label"
+                        >Education</label
+                      >
+                    </div>
+                    <div class="archi-component-checkbox">
+                      <input
+                        type="checkbox"
+                        id="check-15"
+                        class="checkbox-input"
+                      />
+                      <label for="check-15" class="checkbox-input-label"
+                        >Other</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="btn-wrap pc-show">
+                <button class="archi-component-button underline" type="button">
+                  <span class="txt">전체 초기화</span>
+                  <i class="ico-reset" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="archi-list-wrap">
+            <div class="list-count">
+              <p class="type-txt set-opacity-0"
+                >전체
+                <!-- 게시물 0개일 때 point 클래스 제거 -->
+                <span class="point">1,034</span>
+                <!-- <span>0</span> -->
+                개</p
+              >
+            </div>
+            <ul class="row-list">
+              <li class="set-opacity-0">
+                <a href="#" class="list-link">
+                  <div class="row-inner">
+                    <div class="top-area">
+                      <div class="type-r">
+                        <span>영상설비 외 2</span>
+                        <span>Studio 외 5</span>
+                      </div>
+                    </div>
+                    <div class="img-area">
+                      <img
+                        src="../../assets/images/content/img_project01.jpg"
+                        alt="프로젝트 이미지"
+                      />
+                    </div>
+
+                    <div class="tit-area">
+                      <div class="col-tit">
+                        러시아 블라디보스톡 국립 마린스키 연해주 대극장
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="set-opacity-0">
+                <a href="#" class="list-link">
+                  <div class="row-inner">
+                    <div class="top-area">
+                      <div class="type-r">
+                        <span>건축음향 외 5</span>
+                        <span>Religion 외 3</span>
+                      </div>
+                    </div>
+                    <div class="img-area">
+                      <img
+                        src="../../assets/images/content/img_project02.jpg"
+                        alt="프로젝트 이미지"
+                      />
+                    </div>
+
+                    <div class="tit-area">
+                      <div class="col-tit">
+                        예술의 전당 신세계스퀘어 야외무대
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="set-opacity-0">
+                <a href="#" class="list-link">
+                  <div class="row-inner">
+                    <div class="top-area">
+                      <div class="type-r">
+                        <span>무대기계 외 2</span>
+                        <span>Commercial 외 1</span>
+                      </div>
+                    </div>
+                    <div class="img-area">
+                      <img
+                        src="../../assets/images/content/img_project03.jpg"
+                        alt="프로젝트 이미지"
+                      />
+                    </div>
+
+                    <div class="tit-area">
+                      <div class="col-tit">SBS HALL</div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="set-opacity-0">
+                <a href="#" class="list-link">
+                  <div class="row-inner">
+                    <div class="top-area">
+                      <div class="type-r">
+                        <span>무대기계 외 2</span>
+                        <span>Commercial 외 1</span>
+                      </div>
+                    </div>
+                    <div class="img-area">
+                      <img
+                        src="../../assets/images/content/img_project03.jpg"
+                        alt="프로젝트 이미지"
+                      />
+                    </div>
+
+                    <div class="tit-area">
+                      <div class="col-tit"> Never 1784 문화 및 집회시설 </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="set-opacity-0">
+                <a href="#" class="list-link">
+                  <div class="row-inner">
+                    <div class="top-area">
+                      <div class="type-r">
+                        <span>영상설비 외 2</span>
+                        <span>Studio 외 5</span>
+                      </div>
+                    </div>
+                    <div class="img-area">
+                      <img
+                        src="../../assets/images/content/img_project04.jpg"
+                        alt="프로젝트 이미지"
+                      />
+                    </div>
+
+                    <div class="tit-area">
+                      <div class="col-tit">NAVER 파트너스퀘어 스튜디오</div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="set-opacity-0">
+                <a href="#" class="list-link">
+                  <div class="row-inner">
+                    <div class="top-area">
+                      <div class="type-r">
+                        <span>건축음향 외 5</span>
+                        <span>Religion 외 3</span>
+                      </div>
+                    </div>
+                    <div class="img-area">
+                      <img
+                        src="../../assets/images/content/img_project01.jpg"
+                        alt="프로젝트 이미지"
+                      />
+                    </div>
+
+                    <div class="tit-area">
+                      <div class="col-tit">대한항공 연수원 대강당</div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="set-opacity-0">
+                <a href="#" class="list-link">
+                  <div class="row-inner">
+                    <div class="top-area">
+                      <div class="type-r">
+                        <span>무대기계 외 2</span>
+                        <span>Commercial 외 1</span>
+                      </div>
+                    </div>
+                    <div class="img-area">
+                      <img
+                        src="../../assets/images/content/img_project03.jpg"
+                        alt="프로젝트 이미지"
+                      />
+                    </div>
+
+                    <div class="tit-area">
+                      <div class="col-tit">Never 1784 문화 및 집회시설</div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="set-opacity-0">
+                <a href="#" class="list-link">
+                  <div class="row-inner">
+                    <div class="top-area">
+                      <div class="type-r">
+                        <span>영상설비 외 2</span>
+                        <span>Studio 외 5</span>
+                      </div>
+                    </div>
+                    <div class="img-area">
+                      <img
+                        src="../../assets/images/content/img_project04.jpg"
+                        alt="프로젝트 이미지"
+                      />
+                    </div>
+
+                    <div class="tit-area">
+                      <div class="col-tit">NAVER 파트너스퀘어 스튜디오</div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="set-opacity-0">
+                <a href="#" class="list-link">
+                  <div class="row-inner">
+                    <div class="top-area">
+                      <div class="type-r">
+                        <span>건축음향 외 5</span>
+                        <span>Religion 외 3</span>
+                      </div>
+                    </div>
+                    <div class="img-area">
+                      <img
+                        src="../../assets/images/content/img_project01.jpg"
+                        alt="프로젝트 이미지"
+                      />
+                    </div>
+
+                    <div class="tit-area">
+                      <div class="col-tit">대한항공 연수원 대강당 </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <div class="archi-btn-wrap">
+              <button class="archi-component-button btn-more set-opacity-0"
+                >VIEW MORE</button
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      @@include('_footer.html')
+    </div>
+    <div class="dimm"></div>
+    <!-- 자세히 보기, 프로젝트 카테고리 팝업 , 모바일 시 full 추가 -->
+    <div class="modal-wrap" data-modal-trigger="modal01">
+      <div class="modal-frame">
+        <div class="modal-container">
+          <div class="modal-header">
+            <span class="header-tit">프로젝트 카테고리</span>
+          </div>
+          <div class="modal-content">
+            <div class="table-wrap">
+              <table class="archi-component-table">
+                <colgroup>
+                  <col width="14%" />
+                  <col width="86%" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th>카테고리</th>
+                    <th>프로젝트 유형</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Culture</td>
+                    <td>Performing Arts Center / Concert Hall / Theaters</td>
+                  </tr>
+                  <tr>
+                    <td>Studio</td>
+                    <td
+                      >Recording / Mastering / Post / Mixing / Ensemble / Dance
+                      / Video / Rehearsal / Broadcasting Studio</td
+                    >
+                  </tr>
+                  <tr>
+                    <td>Religious</td>
+                    <td>Religious facilities</td>
+                  </tr>
+                  <tr>
+                    <td>Mixed-Use</td>
+                    <td>Convention / Multipurpose Hall</td>
+                  </tr>
+                  <tr>
+                    <td>Commercial</td>
+                    <td>Commercial Facilities / Theme Park / Retail</td>
+                  </tr>
+                  <tr>
+                    <td>Leisure</td>
+                    <td
+                      >Housing / Hotel / Residence/ Villa / Vacation Home /
+                      Resort / Leisure / Entertainment / Sports / Exhibition /
+                      Museum</td
+                    >
+                  </tr>
+                  <tr>
+                    <td>Office</td>
+                    <td
+                      >Corporate Offices / Conference / Seminar / Lecture /
+                      Audio–Visual Hall & Room</td
+                    >
+                  </tr>
+                  <tr>
+                    <td>Education</td>
+                    <td>Education / Research</td>
+                  </tr>
+                  <tr>
+                    <td>Other</td>
+                    <td
+                      >Standardized Room / Overseas Projects / Technical
+                      Proposal</td
+                    >
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <button class="md-close btn" data-modal-close="modal01"
+            ><span class="hide-txt">닫기</span></button
+          >
+        </div>
+      </div>
+      <div class="modal-dimm" data-modal-close="modal01"></div>
+    </div>
+    <!-- 카테고리 선택 팝업 , 모바일 시 full 추가-->
+    <div class="modal-wrap project-popup" data-modal-trigger="modal02">
+      <div class="modal-frame">
+        <div class="modal-container">
+          <div class="modal-header">
+            <span class="header-tit">카테고리 선택</span>
+          </div>
+          <div class="modal-content">
+            <div class="category-wrap">
+              <div class="archi-form-group">
+                <div class="form-tit-area">
+                  <span class="type-tit">사업분야</span>
+                </div>
+                <div class="form-area type-flex">
+                  <div class="archi-component-checkbox">
+                    <input
+                      type="checkbox"
+                      id="check-16"
+                      class="checkbox-input"
+                      checked
+                    />
+                    <label for="check-16" class="checkbox-input-label"
+                      >ALL</label
+                    >
+                  </div>
+                  <div class="archi-component-checkbox">
+                    <input
+                      type="checkbox"
+                      id="check-17"
+                      class="checkbox-input"
+                    />
+                    <label for="check-17" class="checkbox-input-label"
+                      >계획설계</label
+                    >
+                  </div>
+                  <div class="archi-component-checkbox">
+                    <input
+                      type="checkbox"
+                      id="check-18"
+                      class="checkbox-input"
+                    />
+                    <label for="check-18" class="checkbox-input-label"
+                      >중간설계</label
+                    >
+                  </div>
+                  <div class="archi-component-checkbox">
+                    <input
+                      type="checkbox"
+                      id="check-19"
+                      class="checkbox-input"
+                    />
+                    <label for="check-19" class="checkbox-input-label"
+                      >실시설계</label
+                    >
+                  </div>
+                  <div class="archi-component-checkbox">
+                    <input
+                      type="checkbox"
+                      id="check-20"
+                      class="checkbox-input"
+                    />
+                    <label for="check-20" class="checkbox-input-label"
+                      >시공단계 컨설팅</label
+                    >
+                  </div>
+                  <div class="archi-component-checkbox">
+                    <input
+                      type="checkbox"
+                      id="check-33"
+                      class="checkbox-input"
+                    />
+                    <label for="check-33" class="checkbox-input-label"
+                      >시공단계 책임시공</label
+                    >
+                  </div>
+                  <div class="archi-component-checkbox">
+                    <input
+                      type="checkbox"
+                      id="check-21"
+                      class="checkbox-input"
+                    />
+                    <label for="check-21" class="checkbox-input-label"
+                      >평가단계</label
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="archi-form-group">
+                <div class="form-tit-area">
+                  <span class="type-tit">프로젝트 카테고리</span>
+                </div>
+                <div class="form-area type-flex">
+                  <div class="archi-component-checkbox">
+                    <input
+                      type="checkbox"
+                      id="check-22"
+                      class="checkbox-input"
+                    />
+                    <label for="check-22" class="checkbox-input-label"
+                      >ALL</label
+                    >
+                  </div>
+                  <div class="archi-component-checkbox">
+                    <input
+                      type="checkbox"
+                      id="check-23"
+                      class="checkbox-input"
+                    />
+                    <label for="check-23" class="checkbox-input-label"
+                      >Culture</label
+                    >
+                  </div>
+                  <div class="archi-component-checkbox">
+                    <input
+                      type="checkbox"
+                      id="check-24"
+                      class="checkbox-input"
+                    />
+                    <label for="check-24" class="checkbox-input-label"
+                      >Studio</label
+                    >
+                  </div>
+                  <div class="archi-component-checkbox">
+                    <input
+                      type="checkbox"
+                      id="check-25"
+                      class="checkbox-input"
+                    />
+                    <label for="check-25" class="checkbox-input-label"
+                      >Religion</label
+                    >
+                  </div>
+                  <div class="archi-component-checkbox">
+                    <input
+                      type="checkbox"
+                      id="check-26"
+                      class="checkbox-input"
+                    />
+                    <label for="check-26" class="checkbox-input-label"
+                      >Mixed-Use</label
+                    >
+                  </div>
+                  <div class="archi-component-checkbox">
+                    <input
+                      type="checkbox"
+                      id="check-32"
+                      class="checkbox-input"
+                    />
+                    <label for="check-32" class="checkbox-input-label"
+                      >Commercial</label
+                    >
+                  </div>
+                  <div class="archi-component-checkbox">
+                    <input
+                      type="checkbox"
+                      id="check-27"
+                      class="checkbox-input"
+                    />
+                    <label for="check-27" class="checkbox-input-label"
+                      >Leisure</label
+                    >
+                  </div>
+                  <div class="archi-component-checkbox">
+                    <input
+                      type="checkbox"
+                      id="check-28"
+                      class="checkbox-input"
+                    />
+                    <label for="check-28" class="checkbox-input-label"
+                      >Office</label
+                    >
+                  </div>
+                  <div class="archi-component-checkbox">
+                    <input
+                      type="checkbox"
+                      id="check-29"
+                      class="checkbox-input"
+                    />
+                    <label for="check-29" class="checkbox-input-label"
+                      >Education</label
+                    >
+                  </div>
+                  <div class="archi-component-checkbox">
+                    <input
+                      type="checkbox"
+                      id="check-30"
+                      class="checkbox-input"
+                    />
+                    <label for="check-30" class="checkbox-input-label"
+                      >Other</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="btn-wrap">
+              <button class="archi-component-button underline" type="button">
+                <span class="txt">전체 초기화</span>
+                <i class="ico-reset" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+          <button class="md-close btn" data-modal-close="modal02"
+            ><span class="hide-txt">닫기</span></button
+          >
+        </div>
+      </div>
+      <div class="modal-dimm" data-modal-close="modal02"></div>
+    </div>
+  </body>
+  <script type="module" src="../../assets/scripts/common.js"></script>
+  <script type="module" src="../../assets/scripts/pageComp/project.js"></script>
+  <script type="module" charset="UTF-8">
+    const deleteButtons = document.querySelectorAll(".btn-delete");
+
+    deleteButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        const listItem = this.closest("li");
+        listItem.remove();
+      });
+    });
+
+    // 20240315 모달 변경
+    const modal01 = document.querySelector(`[data-modal-trigger="modal01"]`);
+    const modal02 = document.querySelector(`[data-modal-trigger="modal02"]`);
+    const modalInstance01 = new uxgFn.Modal(modal01);
+    const modalInstance02 = new uxgFn.Modal(modal02);
+    modalInstance01.init();
+    modalInstance02.init();
+  </script>
+</html>

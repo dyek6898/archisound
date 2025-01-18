@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset="utf-8" />
+    <title>project components guide</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../../assets/images/icon/ico_favicon.png"
+    />
+    <link
+      href="../../assets/styles/component_guide.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="uid-component-wrap">
+    <div class="uid-container">
+      @@include('_component_header.html')
+      @@include('_component_navigation.html')
+
+      <main class="uid-main code-guide">
+        <h1 class="uid-title01">Modal</h1>
+        <p class="uid-desc">가이드 모음</p>
+
+        <section class="uid-component">
+          <h2 class="uid-title02">기본 가이드</h2>
+          <ul class="uid-list">
+            <li>클래스 modal-wrap에 data-modal-trigger="모달이름" 제공</li>
+            <li>모달을 호출하고 싶은 버튼에 data-modal-open="모달이름" 제공</li>
+            <li>모달을 닫고 싶은 버튼에 data-modal-close="모달이름" 제공</li>
+          </ul>
+        </section>
+
+        <section class="uid-component">
+          <!-- S : 작성 단위 / 추가는 article 단위로 입력  -->
+
+          <!-- S : Modal01 -->
+          <article>
+            <h2 class="uid-title02">[Modal] Default 타입</h2>
+            <ul class="uid-list">
+              <li>기본 모달입니다.</li>
+              <li>팝업 최대 사이즈는 680 X 800 입니다.</li>
+            </ul>
+            <div class="code-wrap">
+              <div class="code_preview uid-demo">
+                <div class="component-area">
+                  <div class="modal-btn-wrap slide">
+                    <button class="modal-btn" data-modal-open="modal01"
+                      >Default Modal</button
+                    > </div
+                  >ㅋ
+                </div>
+              </div>
+              <div class="source-area">
+                <div class="code-tab">
+                  <button type="button" class="code-btn is-active">
+                    <span class="tab-label">Html</span>
+                  </button>
+                  <button type="button" class="code-btn">
+                    <span class="tab-label">Javascript</span>
+                  </button>
+                </div>
+                <div class="code-box">
+                  <div class="code-group is-active">
+                    <div class="code_info">
+                      <button
+                        class="btn_codecopy ui_btnCodeCopy"
+                        data-text-swap="Copy!"
+                      >
+                        Copy to clipboard
+                      </button>
+                    </div>
+                    <textarea
+                      class="code_content html ui_code_content"
+                      data-code="html"
+                    >
+  <div class="modal-btn-wrap slide">
+    <button class="modal-btn" data-modal-open="modal01">default modal</button>
+  </div>
+                    </textarea>
+                  </div>
+                  <div class="code-group">
+                    <div class="code_info">
+                      <button
+                        class="btn_codecopy ui_btnCodeCopy"
+                        data-text-swap="Copy!"
+                      >
+                        Copy to clipboard
+                      </button>
+                    </div>
+                    <textarea
+                      class="code_content css ui_code_content"
+                      data-code="css"
+                    >
+  <script type="module" charset="UTF-8">
+    const modal01 = document.querySelector(`[data-modal-trigger="modal01"]`);
+    const modalInstance01 = new uxgFn.Modal(modal01);
+    modalInstance01.init();
+  </script>
+                    </textarea>
+                  </div>
+                  <div class="code-group">
+                    <div class="code_info">
+                      <button
+                        class="btn_codecopy ui_btnCodeCopy"
+                        data-text-swap="Copy!"
+                      >
+                        Copy to clipboard
+                      </button>
+                    </div>
+                    <textarea
+                      class="code_content javascript ui_code_content"
+                      data-code="javascript"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- E : Modal01 -->
+
+          <!-- S : Modal02 -->
+          <article>
+            <h2 class="uid-title02">[Modal] Full 타입</h2>
+            <ul class="uid-list">
+              <li>mo일 경우 full modal 스타일로 변경됩니다.</li>
+              <li>팝업 사이즈는 full 사이즈 입니다.</li>
+            </ul>
+            <div class="code-wrap">
+              <div class="code_preview uid-demo">
+                <div class="component-area">
+                  <div class="modal-btn-wrap slide">
+                    <button class="modal-btn" data-modal-open="modal02"
+                      >Full Modal</button
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="source-area">
+                <div class="code-tab">
+                  <button type="button" class="code-btn is-active">
+                    <span class="tab-label">Html</span>
+                  </button>
+                  <button type="button" class="code-btn">
+                    <span class="tab-label">Javascript</span>
+                  </button>
+                </div>
+                <div class="code-box">
+                  <div class="code-group is-active">
+                    <div class="code_info">
+                      <button
+                        class="btn_codecopy ui_btnCodeCopy"
+                        data-text-swap="Copy!"
+                      >
+                        Copy to clipboard
+                      </button>
+                    </div>
+                    <textarea
+                      class="code_content html ui_code_content"
+                      data-code="html"
+                    >
+  <div class="modal-btn-wrap slide">
+    <button class="modal-btn" data-modal-open="modal02">default modal</button>
+  </div>
+                    </textarea>
+                  </div>
+                  <div class="code-group">
+                    <div class="code_info">
+                      <button
+                        class="btn_codecopy ui_btnCodeCopy"
+                        data-text-swap="Copy!"
+                      >
+                        Copy to clipboard
+                      </button>
+                    </div>
+                    <textarea
+                      class="code_content css ui_code_content"
+                      data-code="css"
+                    >
+  <script type="module" charset="UTF-8">
+    const modal02 = document.querySelector(`[data-modal-trigger="modal02"]`);
+    const modalInstance02 = new uxgFn.Modal(modal02);
+    modalInstance02.init();
+  </script>
+                    </textarea>
+                  </div>
+                  <div class="code-group">
+                    <div class="code_info">
+                      <button
+                        class="btn_codecopy ui_btnCodeCopy"
+                        data-text-swap="Copy!"
+                      >
+                        Copy to clipboard
+                      </button>
+                    </div>
+                    <textarea
+                      class="code_content javascript ui_code_content"
+                      data-code="javascript"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- E : Modal02 -->
+
+          <!-- E : 작성 단위 / 추가는 article 단위로 입력  -->
+        </section>
+      </main>
+
+      @@include('_component_footer.html')
+    </div>
+    <div class="modal-wrap" data-modal-trigger="modal01">
+      <div class="modal-frame">
+        <div class="modal-container">
+          <div class="modal-header">
+            <span class="header-tit">헤더입니다.</span>
+          </div>
+          <div class="modal-content">컨텐츠</div>
+          <!-- <div class="modal-footer">푸터</div> -->
+          <button class="md-close btn" data-modal-close="modal01">X</button>
+        </div>
+      </div>
+      <div class="modal-dimm" data-modal-close="modal01"></div>
+    </div>
+
+    <div class="modal-wrap full" data-modal-trigger="modal02">
+      <div class="modal-frame">
+        <div class="modal-container">
+          <div class="modal-header">
+            <span class="header-tit">헤더입니다.</span>
+          </div>
+          <div class="modal-content">컨텐츠</div>
+          <div class="modal-footer">푸터</div>
+          <button class="md-close btn" data-modal-close="modal02"></button>
+        </div>
+      </div>
+      <div class="modal-dimm" data-modal-close="modal02"></div>
+    </div>
+    <script src="../../../assets/scripts/component_guide.js"></script>
+
+    <script type="module" src="../../assets/scripts/common.js"></script>
+    <script type="module" charset="UTF-8">
+      const modal01 = document.querySelector(`[data-modal-trigger="modal01"]`);
+      const modalInstance01 = new uxgFn.Modal(modal01);
+      modalInstance01.init();
+
+      const modal02 = document.querySelector(`[data-modal-trigger="modal02"]`);
+      const modalInstance02 = new uxgFn.Modal(modal02);
+      modalInstance02.init();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset="utf-8" />
+    <title>etb project guide</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />
+    <link
+      href="../../assets/styles/component_guide.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="uid-container">
+      <header class="uid-header">
+  <a href="./" class="logo-uxgroup">아키사운드(Archisound-front)</a>
+  <ul class="utillity-menu">
+    <li><a href="#none">링크 영역1</a></li>
+    <li><a href="#none">링크 영역2</a></li>
+  </ul>
+</header>
+
+      <aside class="uid-sidebar">
+  <nav class="uid-navigation"></nav>
+</aside>
+
+
+      <main class="uid-main">
+        <section class="uid-component">
+          <h2 class="uid-title02 bold">Codinglist</h2>
+          <ul class="uid-list">
+            <li>코딩리스트(작업 현황판)</li>
+          </ul>
+          <table class="uid-datatable">
+            <thead>
+              <tr>
+                <th>파일</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>cl.html</td>
+                <td>코딩리스트 html</td>
+              </tr>
+              <tr>
+                <td>codinglist.js</td>
+                <td>코딩리스트 js</td>
+              </tr>
+              <tr>
+                <td>_codinglist.scss</td>
+                <td>코딩리스트 css</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="uid-component">
+          <h2 class="uid-title02 bold">Components</h2>
+          <ul class="uid-list">
+            <li>프로젝트 가이드(산출물 겸용)</li>
+          </ul>
+          <table class="uid-datatable">
+            <thead>
+              <tr>
+                <th>파일</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>_component_header.html</td>
+                <td>컴포넌트 가이드 페이지 헤더 html</td>
+              </tr>
+              <tr>
+                <td>_component_footer.html</td>
+                <td>컴포넌트 가이드 페이지 푸터 html</td>
+              </tr>
+              <tr>
+                <td>_component_navigation.html</td>
+                <td>컴포넌트 가이드 페이지 네비게이션 html</td>
+              </tr>
+              <tr>
+                <td>component_guide.json</td>
+                <td>컴포넌트 가이드 페이지 네비게이션 json</td>
+              </tr>
+              <tr>
+                <td>component_guide.js</td>
+                <td>컴포넌트 가이드 페이지 js</td>
+              </tr>
+              <tr>
+                <td>_component_guide.scss</td>
+                <td>컴포넌트 가이드 페이지 scss</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="uid-component">
+          <h2 class="uid-title02 bold">소스(폴더) 구조</h2>
+          <ul class="uid-list">
+            <li>프로젝트 세팅 시 필요한 공통적인 소스구조입니다.</li>
+          </ul>
+          <div class="uid-title04 bold">기본 폴더 구조</div>
+          <table class="uid-datatable">
+            <thead>
+              <tr>
+                <th>폴더</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>pages</td>
+                <td>
+                  웹사이트나 애플리케이션의 각각의 페이지에 해당하는 HTML 파일
+                  또는 페이지 컴포넌트 파일을 저장하는 데 사용
+                </td>
+              </tr>
+              <tr>
+                <td>assets</td>
+                <td>
+                  웹 사이트나 애플리케이션에 필요한 다양한 정적 파일들을
+                  저장하기 위해 사용
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="uid-title04 bold">html</div>
+          <table class="uid-datatable">
+            <thead>
+              <tr>
+                <th>폴더</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>pages/include</td>
+                <td>인클루드 파일 폴더</td>
+              </tr>
+              <tr>
+                <td>pages/components</td>
+                <td>컴포넌트 파일 폴더</td>
+              </tr>
+              <tr>
+                <td>pages/main</td>
+                <td>메인 파일 폴더</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="uid-title04 bold">style</div>
+          <table class="uid-datatable">
+            <thead>
+              <tr>
+                <th>폴더</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>assets/styles/abstracts</td>
+                <td>
+                  글로벌 변수, 함수, 믹스인 및 플레이스홀더 등을 포함합니다.
+                </td>
+              </tr>
+              <tr>
+                <td>assets/styles/base</td>
+                <td>
+                  프로젝트의 기본적인 스타일 설정을 포함합니다. 여기에는 HTML
+                  요소(예: h1, p, a)에 대한 기본 스타일이 포함됩니다.
+                </td>
+              </tr>
+              <tr>
+                <td>assets/styles/utilities</td>
+                <td>
+                  유틸리티 클래스를 포함하며, 이들은 프로젝트 전체에서
+                  공통적으로 사용됩니다.
+                </td>
+              </tr>
+              <tr>
+                <td>assets/styles/components</td>
+                <td>재사용 가능한 UI 컴포넌트의 스타일을 정의합니다.</td>
+              </tr>
+              <tr>
+                <td>assets/styles/layout</td>
+                <td>
+                  사이트 또는 애플리케이션의 레이아웃 관련 스타일을 정의합니다
+                  (예: 헤더, 푸터, 사이드바).
+                </td>
+              </tr>
+              <tr>
+                <td>assets/styles/pages</td>
+                <td>특정 페이지에 특화된 스타일을 정의합니다.</td>
+              </tr>
+              <tr>
+                <td>assets/styles/themes</td>
+                <td>다양한 테마 또는 스킨에 대한 스타일을 포함합니다.</td>
+              </tr>
+              <tr>
+                <td>assets/styles/vendors</td>
+                <td>
+                  서드파티 라이브러리 및 프레임워크의 오버라이드 및 커스텀
+                  스타일을 포함합니다.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="uid-title04 bold">script</div>
+          <table class="uid-datatable">
+            <thead>
+              <tr>
+                <th>폴더</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>assets/common</td>
+                <td>
+                  common.js 파일이 있으며, 모든 js가 common.js 한곳에 merge
+                  됩니다.</td
+                >
+              </tr>
+              <tr>
+                <td>assets/uiComp</td>
+                <td>showroom 캄퍼넌트 사용 시 필요한 js 파일을 포함합니다.</td>
+              </tr>
+              <tr>
+                <td>assets/pageComp</td>
+                <td>각 페이지에서 사용되는 js 파일을 포함합니다.</td>
+              </tr>
+              <tr>
+                <td>assets/lib</td>
+                <td>각종 자바스크립트 라이브러리를 포함합니다.</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="uid-title04 bold">image</div>
+          <table class="uid-datatable">
+            <thead>
+              <tr>
+                <th>폴더</th>
+                <th>설명</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>assets/images/common</td>
+                <td>공통으로 사용되는 이미지를 포함하고 있는 폴더입니다.</td>
+              </tr>
+              <tr>
+                <td>assets/images/main</td>
+                <td>메인에서 사용되는 이미지를 포함하고 있는 폴더입니다.</td>
+              </tr>
+              <tr>
+                <td>assets/images/content</td>
+                <td>컨텐츠에 사용되는 이미지를 포함하고 있는 폴더입니다.</td>
+              </tr>
+              <tr>
+                <td>assets/images/icon</td>
+                <td>아이콘 이미지가 모여있는 폴더입니다.</td>
+              </tr>
+              <tr>
+                <td>assets/images/lottie</td>
+                <td>인터랙션에 사용되는 json들을 포함하고 있는 폴더입니다.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <!-- <section class="uid-component">
+            <h2 class="uid-title02">제목</h2>
+            <ul class="uid-list">
+                <li>설명</li>
+            </ul>
+            <div class="code_preview uid-demo"></div>
+            <div class="code_info"><button class="btn_codecopy ui_btnCodeCopy" data-text-swap="Copy!">Copy to clipboard</button></div>
+            <textarea class="code_content html ui_code_content" data-code="html">
+                <p>icon sample</p>
+            </textarea>
+        </section> -->
+      </main>
+
+      <footer class="uid-footer">
+  <small class="copyright">
+    ©
+    <time class="time ui-copyright">2022</time>
+    ETRIBE UX Group, ALL RIGHTS RESERVED
+  </small>
+</footer>
+
+    </div>
+    <script src="../../assets/scripts/component_guide.js"></script>
+    <script type="module" src="../../assets/scripts/common.js"></script>
+    <!-- 공통 -->
+    <script></script>
+  </body>
+</html>

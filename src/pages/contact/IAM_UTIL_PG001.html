@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset="utf-8" />
+    <title>프로젝트타이틀</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../../assets/images/icon/ico_favicon.png"
+    />
+    <link
+      href="../../assets/styles/content.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="wrap" class="archi-contact">
+      @@include('_header.html', { "title": "test_title01", "title02":
+      "test_title02" })
+
+      <!-- 상단 비쥬얼 영역 -->
+      <div class="archi-sub-top-group type01">
+        <div class="tit-area">
+          <div class="text-line">
+            <h2 class="type-tit text-row set-opacity-0">CONTACT US</h2>
+          </div>
+          <span class="type-sub-tit set-opacity-0">
+            궁금한 사항을 문의 주시면 <br class="mo-show" />친절하고 신속하게
+            답변 드리겠습니다.
+          </span>
+        </div>
+        <div class="img-area set-opacity-0">
+          <img
+            src="../../assets/images/content/top_visual_contact.jpg"
+            alt=""
+            class="pc-show"
+          />
+          <img
+            src="../../assets/images/content/top_visual_contact_mo.jpg"
+            alt=""
+            class="mo-show"
+          />
+        </div>
+      </div>
+
+      <!-- 컨텐츠 영역 -->
+      <div class="archi-sub-content-group mt-160">
+        <div class="content-inner small">
+          <div class="contact-cont type01">
+            <div class="tit-area">
+              <div class="text-line">
+                <h3 class="text-row type-tit set-opacity-0">회사정보</h3>
+              </div>
+            </div>
+            <div class="info-area set-opacity-0">
+              <div class="info-img">
+                <img
+                  src="../../assets/images/content/img_contact.png"
+                  alt="회사 이미지"
+                  class="pc-show"
+                />
+                <img
+                  src="../../assets/images/content/img_contact_mo.png"
+                  alt="회사 이미지"
+                  class="mo-show"
+                />
+              </div>
+              <div class="info-txt">
+                <div class="row-txt">
+                  <span class="type-tit">LOCATION.</span>
+                  <span class="type-sub"
+                    >서울특별시 강남구 학동로224 (논현동, 삼환아르누보3)
+                    3층</span
+                  >
+                </div>
+                <div class="col-txt-group">
+                  <div class="col-txt">
+                    <span class="type-tit">TEL.</span>
+                    <span class="type-sub">02-545-7811</span>
+                  </div>
+                  <div class="col-txt">
+                    <span class="type-tit">FAX.</span>
+                    <span class="type-sub">02-542-7811</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-cont type02">
+            <div class="tit-area">
+              <div class="text-line">
+                <h3 class="text-row type-tit set-opacity-0">문의하기</h3>
+              </div>
+            </div>
+            <div class="input-area set-opacity-0">
+              <div class="archi-form-group">
+                <div class="form-area col1-half">
+                  <div class="archi-textfield">
+                    <div class="form-tit-area">
+                      <span class="type-tit"
+                        >이름<span class="system">*</span></span
+                      >
+                    </div>
+                    <div class="archi-component-input">
+                      <input type="text" placeholder="이름을 입력해주세요" />
+                      <div class="utill-btn-area">
+                        <button class="btn-clear"
+                          ><span class="hide-txt">삭제</span></button
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="archi-textfield">
+                    <div class="form-tit-area">
+                      <span class="type-tit"
+                        >연락처<span class="system">*</span></span
+                      >
+                    </div>
+                    <div class="archi-component-input">
+                      <input type="text" placeholder="연락처를 입력해주세요" />
+                      <div class="utill-btn-area">
+                        <button class="btn-clear"
+                          ><span class="hide-txt">삭제</span></button
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-area col1-half">
+                  <div class="archi-textfield">
+                    <div class="form-tit-area">
+                      <span class="type-tit"
+                        >이메일 주소<span class="system">*</span></span
+                      >
+                    </div>
+                    <div class="archi-component-input">
+                      <input
+                        type="text"
+                        placeholder="이메일 주소를 입력해주세요"
+                      />
+                      <div class="utill-btn-area">
+                        <button class="btn-clear"
+                          ><span class="hide-txt">삭제</span></button
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="archi-textfield">
+                    <div class="form-tit-area">
+                      <span class="type-tit"
+                        >문의 항목<span class="system">*</span></span
+                      >
+                    </div>
+                    <div class="archi-component-dropdown">
+                      <div class="dropdown-tit">문의항목을 선택해주세요</div>
+                      <ul class="dropwdwon-option" style="display: none">
+                        <li>설계</li>
+                        <li>시공</li>
+                        <li>컨설팅</li>
+                        <li>측정/진단</li>
+                        <li>기타</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-area">
+                  <div class="archi-textfield">
+                    <div class="form-tit-area">
+                      <span class="type-tit"
+                        >문의 내용<span class="system">*</span></span
+                      >
+                    </div>
+                    <div class="archi-component-input">
+                      <textarea
+                        rows="8"
+                        placeholder="문의 내용을 입력해주세요"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-area agree">
+                  <div class="archi-textfield">
+                    <div class="form-tit-area">
+                      <span class="type-tit"
+                        >개인정보 수집 · 이용 동의(<span class="system">*</span
+                        >필수)</span
+                      >
+                    </div>
+                    <div class="line-box-area">
+                      <div class="table-wrap">
+                        <table class="archi-component-table type-response">
+                          <colgroup>
+                            <col width="" />
+                            <col width="" />
+                            <col width="" />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th>항목</th>
+                              <th>보유 및 이용 기간</th>
+                              <th>수집 및 이용 목적</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td data-label="항목">이름, 전화번호, 이메일</td>
+                              <td data-label="보유 및 이용 기간"
+                                >회원 식별 및 서비스 제공</td
+                              >
+                              <td data-label="수집 및 이용 목적"
+                                >입력일로부터 2년까지</td
+                              >
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <p class="type-txt"
+                        >* 동의를 거부할 권리가 있습니다. 다만, 필수 동의 거부
+                        시 서비스가 제한될 수 있습니다.</p
+                      >
+                    </div>
+                    <div class="agree-radio-wrap">
+                      <p class="type-txt">개인정보 수집 • 이용에 동의합니다.</p>
+                      <div class="archi-component-radio-group">
+                        <div class="archi-component-radio">
+                          <input
+                            type="radio"
+                            name="agree"
+                            id="radio-01"
+                            class="radio-input"
+                          />
+                          <label for="radio-01" class="radio-input-label"
+                            >동의함</label
+                          >
+                        </div>
+                        <div class="archi-component-radio">
+                          <input
+                            type="radio"
+                            name="agree"
+                            id="radio-02"
+                            class="radio-input"
+                          />
+                          <label for="radio-02" class="radio-input-label"
+                            >동의하지 않음</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-area security">
+                  <div class="form-tit-area">
+                    <span class="type-tit">보안문자입력</span>
+                  </div>
+                  <div class="archi-textfield col3-1">
+                    <div class="textfield-inner">
+                      <div class="img-wrap">
+                        <img src="" alt="보안문자" />
+                      </div>
+                      <div class="archi-component-input">
+                        <input type="text" placeholder="보안문자 6자리 입력" />
+                        <div class="utill-btn-area">
+                          <button class="btn-clear"
+                            ><span class="hide-txt">삭제</span></button
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="btn-wrap">
+                      <button class="btn-reset">새로고침</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="archi-btn-wrap">
+            <button class="archi-component-button btn-more"
+              >문의 등록하기</button
+            >
+          </div>
+        </div>
+      </div>
+
+      @@include('_footer.html')
+    </div>
+    <div class="dimm"></div>
+  </body>
+  <script type="module" src="../../assets/scripts/common.js"></script>
+  <script type="module" src="../../assets/scripts/pageComp/utils.js"></script>
+</html>

@@ -1,0 +1,664 @@
+@use "../abstracts" as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: $base-z-index;
+  .progress-box {
+    position: relative;
+    width: 100%;
+    @include vw(height, 8);
+    background-color: $gray-fff;
+    z-index: 1;
+    .progress-bar {
+      width: 0;
+      @include vw(height, 8);
+      background: $primary;
+    }
+    &.on {
+      backdrop-filter: blur(15px);
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  }
+  .header-inner {
+    position: absolute;
+    width: 100%;
+    @include vw(height, 112);
+    @include vw(padding, 0 92);
+    margin: 0 auto;
+    transform: translateZ(0);
+    transition: all 0.6s cubic-bezier(0.51, 0.04, 0.07, 0.97);
+    .gnb-wrap {
+      display: flex;
+      @include vw(height, 112);
+      align-items: center;
+      justify-content: space-between;
+      .logo-area {
+        .logo {
+          display: block;
+          @include rem(width, 220px);
+          @include rem(height, 32);
+          background: url(../images/common/archi_logo.png) no-repeat;
+          background-size: 100% auto;
+        }
+      }
+      .gnb-area {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .gnb-list {
+        display: flex;
+        align-items: center;
+        .one-depth {
+          @include vw(padding, 45 16);
+          @include rem(font-size, 18);
+          font-weight: 500;
+          font-family: "Prompt";
+          line-height: 1.1;
+          @include rem(letter-spacing, 0.72);
+          > a {
+            &:hover {
+              color: $primary;
+            }
+          }
+          .two-depth {
+            &:hover {
+              color: $gray-fff;
+            }
+          }
+          &.on {
+            > a {
+              color: $primary;
+            }
+            .two-depth-list {
+              display: flex;
+            }
+          }
+          &:last-child {
+            @include vw(padding, 45 0 45 16);
+          }
+        }
+        .two-depth-list {
+          position: absolute;
+          @include vw(top, 106);
+          @include vw(left, -7);
+          display: none;
+          align-items: center;
+          width: 100%;
+          @include vw(height, 112);
+          @include vw(padding, 43 24);
+          // transition: all 0.4s cubic-bezier(0.51, 0.04, 0.07, 0.97);
+          z-index: $base-z-index;
+          .two-depth {
+            // @include font(18, m, pc);
+            @include rem(font-size, 18);
+            font-family: "Pretendard";
+            line-height: 1.1;
+            min-width: fit-content;
+            letter-spacing: normal;
+            + .two-depth {
+              @include vw(margin-left, 40);
+            }
+          }
+        }
+      }
+      .btn-area {
+        @include vw(margin-left, 60);
+        button {
+          @include rem(width, 32);
+          @include rem(height, 32);
+          + button {
+            @include vw(margin-left, 28);
+          }
+        }
+        .btn-search {
+          background: url(../images/icon/ico_search.png) no-repeat;
+          background-size: 100% auto;
+        }
+        .btn-menu {
+          background: url(../images/icon/ico_menu.png) no-repeat;
+          background-size: 100% auto;
+        }
+      }
+    }
+    .gnb-bg {
+      position: absolute;
+      left: 0;
+      right: 0;
+      @include vw(top, 112);
+      display: none;
+      width: 100%;
+      @include vw(height, 112);
+      background-color: $primary;
+      // transition: all 0.4s cubic-bezier(0.51, 0.04, 0.07, 0.97);
+      z-index: -1;
+      &.on {
+        display: block;
+      }
+    }
+    &.on {
+      .gnb-wrap {
+        // backdrop-filter: blur(15px);
+        .logo-area {
+          .logo {
+            background: url(../images/common/archi_logo_white.png) no-repeat;
+            background-size: 100% auto;
+          }
+        }
+        .gnb-list {
+          .one-depth {
+            color: $gray-fff;
+          }
+          .two-depth {
+            &:hover {
+              color: $primary;
+            }
+          }
+        }
+        .btn-area {
+          .btn-search {
+            background: url(../images/icon/ico_search_white.png) no-repeat;
+            background-size: 100% auto;
+          }
+          .btn-menu {
+            background: url(../images/icon/ico_menu_white.png) no-repeat;
+            background-size: 100% auto;
+          }
+        }
+      }
+      .gnb-bg {
+        backdrop-filter: blur(15px);
+        @include vw(border-top, 1px solid $gray_666);
+        background-color: rgba(0, 0, 0, 0.7);
+        // z-index: -1;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        @include vw(left, 0);
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(15px);
+        background-color: rgba(0, 0, 0, 0.7);
+        transition: all 0.6s cubic-bezier(0.51, 0.04, 0.07, 0.97);
+        z-index: -1;
+      }
+    }
+  }
+
+  // 전체메뉴
+  .all-menu-group {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(15px);
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    .all-menu-area {
+      @include vw(padding, 160 92 92 388);
+      .menu-list {
+        display: flex;
+        align-items: flex-end;
+        .one-depth-menu {
+          color: $gray-fff;
+          @include font(54, b, pc, eng);
+          @include vw(letter-spacing, 2.16px);
+        }
+        & + .menu-list {
+          @include vw(margin-top, 48);
+        }
+      }
+      .two-depth-list {
+        display: flex;
+        @include vw(margin-left, 48);
+        .two-depth-menu {
+          color: $gray-fff;
+          @include font(20, m, pc);
+          a {
+            &:hover {
+              color: $primary;
+            }
+          }
+          + .two-depth-menu {
+            @include vw(margin-left, 40);
+          }
+        }
+      }
+    }
+    .utill-footer {
+      position: absolute;
+      @include vw(bottom, 92);
+      @include vw(padding, 0 92 0 388);
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      a {
+        color: $gray-fff;
+        @include font(20, m, pc);
+      }
+      .utill-nav {
+        a {
+          + a {
+            @include vw(margin-left, 40);
+          }
+        }
+      }
+      .utill-info {
+        display: flex;
+        div {
+          color: $gray-fff;
+          @include font(20, m, pc, eng);
+          + div {
+            @include vw(margin-left, 80);
+          }
+        }
+      }
+    }
+  }
+  .all-search-group {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    @include vw(height, 432);
+    backdrop-filter: blur(15px);
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    .archi-textfield {
+      @include vw(padding, 120 388);
+      border-top: 1px solid $gray_666;
+      .textfield-input {
+        border: none;
+      }
+    }
+  }
+  // 전체검색, 전체메뉴 header
+  .utill-header {
+    display: flex;
+    @include vw(height, 112);
+    @include vw(padding, 0 92);
+    align-items: center;
+    justify-content: space-between;
+    .logo {
+      display: block;
+      @include vw(width, 220);
+      @include vw(height, 32);
+      background: url(../images/common/archi_logo_white.png) no-repeat;
+      background-size: 100% auto;
+    }
+  }
+
+  .btn-utill-close {
+    position: absolute;
+    @include vw(top, 36);
+    @include vw(right, 92);
+    @include vw(width, 48);
+    @include vw(height, 48);
+    background: url(../images/icon/ico_close_white.png) center / 100% 100%
+      no-repeat;
+  }
+  &.on {
+    .header-inner {
+      transform: translate3d(0, -110%, 0);
+    }
+  }
+  // 탑 영역 x 컨텐츠 영역만 있을 경우
+  + .archi-sub-content-group {
+    @include vw(margin-top, 300);
+  }
+}
+
+// intero 인터랙션
+.intro-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 120;
+  .intro-lottie {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    @include vw(width, 560);
+    @include vw(height, 110);
+    transform: translate(-50%, -50%);
+    z-index: 1010;
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: auto !important;
+      height: auto !important;
+      transform: none;
+      transition: none;
+      transform: translate(-50%, -50%) !important;
+    }
+  }
+  .intro-bg01 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $gray-000;
+    z-index: 1005;
+  }
+  .intro-bg02 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $primary;
+    z-index: 1000;
+  }
+}
+
+// loading 인터랙션
+.loading-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  .loading {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    @include vw(width, 150);
+    @include vw(height, 150);
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: auto !important;
+      height: auto !important;
+      transform: none;
+      transition: none;
+      transform: translate(-50%, -50%) !important;
+    }
+  }
+  .loading-dimm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $gray-000;
+    opacity: 0.8;
+    z-index: 999;
+  }
+}
+
+// MOs
+@media (max-width: 1024px) {
+  .header {
+    @include rem(height, 72);
+    .header-inner {
+      height: 100%;
+      @include rem(padding, 0 20);
+      .gnb-wrap {
+        height: 100%;
+        .logo-area {
+          .logo {
+            @include rem(width, 162);
+            @include rem(height, 24);
+            background: url(../images/common/archi_logo_mo.png) no-repeat;
+            background-size: 100% auto;
+          }
+        }
+        .gnb-list {
+          display: none;
+        }
+        .btn-area {
+          button {
+            @include rem(width, 32);
+            @include rem(height, 32);
+          }
+          .btn-search {
+            background: url(../images/icon/ico_search_mo.png) no-repeat;
+            background-size: 100% auto;
+          }
+          .btn-menu {
+            background: url(../images/icon/ico_menu_mo.png) no-repeat;
+            background-size: 100% auto;
+          }
+        }
+      }
+      &.on {
+        .gnb-wrap {
+          .logo-area {
+            .logo {
+              background: url(../images/common/archi_logo_white_mo.png)
+                no-repeat;
+              background-size: 100% auto;
+            }
+          }
+          .btn-area {
+            .btn-search {
+              background: url(../images/icon/ico_search_white_mo.png) no-repeat;
+              background-size: 100% auto;
+            }
+            .btn-menu {
+              background: url(../images/icon/ico_menu_white_mo.png) no-repeat;
+              background-size: 100% auto;
+            }
+          }
+        }
+      }
+    }
+    .mo-menu-group {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      backdrop-filter: blur(15px);
+      background-color: rgba(0, 0, 0, 0.7);
+      .utill-header {
+        @include rem(height, 72);
+        .logo {
+          @include rem(width, 162);
+          @include rem(height, 24);
+          background: url(../images/common/archi_logo_white_mo.png) no-repeat;
+          background-size: 100% auto;
+        }
+      }
+      .menu-area {
+        height: 100%;
+        @include rem(padding, 40 20);
+      }
+      .archi-component-input {
+        .textfield-input {
+          border: none;
+        }
+      }
+      .archi-component-accordion {
+        height: calc(100% - 150px);
+        overflow-x: scroll;
+        @include rem(margin-top, 32);
+        .accordion-item {
+          .mg-accordion-trigger {
+            position: relative;
+            width: 100%;
+            @include rem(padding, 28 0);
+            color: $gray-fff;
+            @include font(22, b, mo, eng);
+            @include rem(border-bottom, 1px solid #fff);
+            border-color: rgba(255, 255, 255, 0.1);
+            text-align: left;
+            &::after {
+              content: "";
+              position: absolute;
+              @include rem(top, 28);
+              right: 0;
+              @include rem(width, 32);
+              @include rem(height, 32);
+              background: url(../images/icon/ico_arrow_down_mo.png) no-repeat;
+              background-size: 100% auto;
+              transition: all 0.1s ease;
+            }
+          }
+          .accordion-content {
+            display: none;
+            @include rem(padding, 32 20 12);
+            li {
+              a {
+                color: $gray-fff;
+                @include font(18, sb, mo);
+              }
+              + li {
+                @include rem(margin-top, 24);
+              }
+            }
+          }
+          // &:nth-child(1) {
+          //   .accordion-content {
+          //     li {
+          //       a {
+          //         font-family: "Prompt";
+          //       }
+          //     }
+          //   }
+          // }
+          &:nth-child(1),
+          &:not(:nth-child(-n + 2)) {
+            .mg-accordion-trigger {
+              &::after {
+                display: none;
+              }
+            }
+          }
+          &.on {
+            .mg-accordion-trigger {
+              color: $primary;
+              border-color: $primary;
+              &::after {
+                background: url(../images/icon/ico_arrow_down_on.png) no-repeat;
+                background-size: 100% auto;
+                transform: rotate(-180deg);
+              }
+            }
+            .accordion-content {
+              display: block;
+            }
+          }
+        }
+      }
+      .btn-utill-close {
+        @include rem(top, 20);
+        @include rem(right, 20);
+        @include rem(width, 32);
+        @include rem(height, 32);
+        background: url(../images/icon/ico_close_white_mo.png) no-repeat;
+        background-size: 100% auto;
+      }
+    }
+    // 탑 영역 x 컨텐츠 영역만 있을 경우
+    + .archi-sub-content-group {
+      @include rem(margin-top, 152);
+    }
+  }
+  .intro-area {
+    .intro-lottie {
+      svg {
+        @include rem(width, 250 !important);
+        @include rem(height, 250 !important);
+      }
+    }
+  }
+}
+
+/* 커스텀 커서 시작========== */
+* {
+  cursor: none;
+}
+@media (max-width: 1024px) {
+  * {
+    cursor: auto;
+  }
+}
+/* 커스텀 커서 스타일 */
+.custom-cursor {
+  @include vw(width, 48);
+  @include vw(height, 48);
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  backface-visibility: hidden;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: opacity 0.2s ease; /* 투명도 전환 트랜지션 */
+  z-index: 999;
+}
+
+/* 커스텀 커서 아이콘 스타일 */
+.custom-cursor-icon {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: transform 0.2s ease; /* 크기 변환 트랜지션 */
+  transform-origin: 50% 50%;
+}
+
+.mix-blend-on {
+  mix-blend-mode: difference;
+}
+
+/* 커서가 보이는 경우 투명도를 1로 설정 */
+.custom-cursor.custom_cursor_visible {
+  opacity: 1;
+}
+
+/* 커서가 숨겨진 경우 투명도를 0으로 설정 */
+.custom-cursor.custom_cursor_hidden {
+  opacity: 0;
+}
+
+/* 터치 또는 미디어 쿼리가 있는 기기에서 커서 숨김 */
+@media (pointer: none), (pointer: coarse) {
+  #custom_cursor,
+  #custom_cursor .custom-cursor-icon {
+    display: none !important;
+    visibility: hidden;
+    opacity: 0;
+  }
+  * {
+    cursor: auto !important;
+  }
+}
+
+/* 모바일 화면 크기에서는 기본 커서로 변경 */
+@media (max-width: 1024px) {
+  * {
+    cursor: auto !important;
+  }
+  .custom-cursor {
+    display: none;
+  }
+}
+
+/* 커서가 호버된 경우 아이콘 크기 변환 및 추가 스타일 */
+.custom-cursor.custom_cursor_hover .custom-cursor-icon {
+  transform: scale(0.3);
+  background-color: $primary;
+  border: 1px solid $primary;
+}
+
+/* 커스텀 커서 끝========== */

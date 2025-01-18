@@ -1,0 +1,120 @@
+@use "../abstracts" as *;
+
+// 컴포넌트 - 테이블
+.archi-component-table {
+  @include vw(border-top, 4px solid $gray_000);
+  thead {
+    th {
+      @include font(20, b, pc);
+      @include vw(padding, 20 0 18);
+      background: $bg_color02;
+      text-align: center;
+    }
+  }
+  tbody {
+    @include vw(border-top, 1px solid $border_color01);
+    td {
+      @include vw(border-bottom, 1px solid $border_color01);
+      @include vw(padding, 20 24);
+      &:first-child {
+        @include font(20, b, pc);
+        text-align: center;
+      }
+      &:nth-child(2) {
+        @include font(20, r, pc);
+        color: $gray_333;
+      }
+      & + td {
+        @include vw(border-left, 1px solid $border_color01);
+      }
+    }
+  }
+  &.type-response {
+    width: 100%;
+    @include vw(border-top, 2px solid $gray_000);
+    td {
+      text-align: center;
+      @include font(20, r, pc);
+      color: $gray_333;
+      &:first-child {
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+// MOs
+@media (max-width: 1024px) {
+  // 컴포넌트 - 테이블
+  .archi-component-table {
+    @include rem(border-top, 3px solid $gray_000);
+    thead {
+      th {
+        @include font(18, b, mo);
+        @include rem(padding, 16 0 17);
+      }
+    }
+    tbody {
+      td {
+        @include rem(padding, 16);
+        &:first-child {
+          @include font(16, b, mo);
+        }
+        &:nth-child(2) {
+          @include font(16, r, mo);
+        }
+      }
+    }
+    &.type-response {
+      @include rem(border-top, 2px solid $gray_000);
+      tbody,
+      thead,
+      tr {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 100%;
+      }
+      th {
+        display: none;
+      }
+      td {
+        position: relative;
+        display: flex;
+        width: 100%;
+        @include rem(padding-left, 120);
+        @include rem(padding, 21 20 21 120);
+        @include font(14, r, mo);
+        color: $gray_333;
+        text-align: left;
+        &:first-child,
+        &:nth-child(2) {
+          @include font(14, r, mo);
+        }
+        & + td {
+          border-left: none;
+        }
+      }
+      td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include rem(width, 104);
+        height: -webkit-fill-available;
+        @include rem(padding, 32.5 25);
+        @include rem(margin-right, 16);
+        background: $bg_color02;
+        @include font(14, b, mo);
+        text-align: center;
+      }
+      .pc-mode {
+        display: none;
+      }
+    }
+  }
+}

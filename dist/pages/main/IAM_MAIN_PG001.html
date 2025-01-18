@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset="utf-8" />
+    <title>프로젝트타이틀</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="../../assets/images/icon/ico_favicon.png"
+    />
+    <link
+      href="../../assets/styles/main.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <!-- <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.22/bundled/lenis.min.js"></script> -->
+    <script type="module" src="../../assets/scripts/lib/lenis.min.js"></script>
+    <script>
+      if (!sessionStorage.getItem("noIntro")) {
+        const style = `
+          body {background: #000000}
+          #wrap {display:none}
+        `;
+
+        const $style = document.createElement("style");
+        $style.id = "main-style";
+        $style.innerHTML = style;
+
+        document.querySelector("head").appendChild($style);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <!-- s: header include-->
+<header id="header" class="header">
+  <div class="progress-box pc-show">
+    <div class="progress-bar"></div>
+  </div>
+  <div class="header-inner">
+    <div class="gnb-wrap">
+      <div class="logo-area">
+        <h1>
+          <a href="" class="logo"><span class="hide-txt">홈으로 이동</span></a>
+        </h1>
+      </div>
+      <div class="gnb-area">
+        <ul class="gnb-list">
+          <li class="one-depth">
+            <a href="">
+              <span>COMPANY</span>
+            </a>
+          </li>
+          <li class="one-depth">
+            <a href="">
+              <span>BUSINESS</span>
+            </a>
+            <ul class="two-depth-list">
+              <li class="two-depth">
+                <a href=""></a>
+                <a href="">계획설계 </a>
+              </li>
+              <li class="two-depth">
+                <a href=""></a>
+                <a href="">중간설계 </a>
+              </li>
+              <li class="two-depth">
+                <a href=""></a>
+                <a href="">실시설계 </a>
+              </li>
+              <li class="two-depth">
+                <a href=""></a>
+                <a href="">시공단계&nbsp;컨설팅</a>
+              </li>
+              <li class="two-depth">
+                <a href=""></a>
+                <a href="">시공단계&nbsp;책임시공</a>
+              </li>
+              <li class="two-depth">
+                <a href=""></a>
+                <a href="">평가단계</a>
+              </li>
+            </ul>
+          </li>
+          <li class="one-depth">
+            <a href="">
+              <span>PROJECT</span>
+            </a>
+          </li>
+          <li class="one-depth">
+            <a href="">
+              <span>PR CENTER</span>
+            </a>
+          </li>
+          <li class="one-depth">
+            <a href="">
+              <span>CONTACT US</span>
+            </a>
+          </li>
+        </ul>
+        <div class="btn-area">
+          <button class="btn-search"><span class="hide-txt">검색</span></button>
+          <button class="btn-menu"><span class="hide-txt">메뉴</span></button>
+        </div>
+      </div>
+    </div>
+    <span class="gnb-bg"></span>
+  </div>
+  <!-- 전체 메뉴 -->
+  <div class="all-menu-group" data-lenis-prevent="true" style="display: none">
+    <div class="utill-header">
+      <h1>
+        <a href="" class="logo"><span class="hide-txt">홈으로 이동</span></a>
+      </h1>
+    </div>
+    <ul class="all-menu-area">
+      <li class="menu-list">
+        <span class="one-depth-menu">COMPANY</span>
+        <ul class="two-depth-list">
+          <li class="two-depth-menu"> <a href="#">COMPANY</a></li>
+        </ul>
+      </li>
+      <li class="menu-list">
+        <span class="one-depth-menu">BUSINESS</span>
+        <ul class="two-depth-list">
+          <li class="two-depth-menu"> <a href="#">계획설계</a></li>
+          <li class="two-depth-menu"> <a href="#">중간설계</a></li>
+          <li class="two-depth-menu"> <a href="#">실시설계</a></li>
+          <li class="two-depth-menu"> <a href="#">시공단계 컨설팅</a></li>
+          <li class="two-depth-menu"> <a href="#">시공단계 책임시공</a></li>
+          <li class="two-depth-menu"> <a href="#">평가단계</a></li>
+        </ul>
+      </li>
+      <li class="menu-list">
+        <span class="one-depth-menu">PROJECT</span>
+        <ul class="two-depth-list">
+          <li class="two-depth-menu"> <a href="#">PROJECT</a></li>
+        </ul>
+      </li>
+      <li class="menu-list">
+        <span class="one-depth-menu">PR CENTER</span>
+        <ul class="two-depth-list">
+          <li class="two-depth-menu"> <a href="#">PR CENTER</a></li>
+        </ul>
+      </li>
+      <li class="menu-list">
+        <span class="one-depth-menu">CONTACT US</span>
+        <ul class="two-depth-list">
+          <li class="two-depth-menu"> <a href="#">CONTACT US</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="utill-footer">
+      <div class="utill-nav">
+        <a href="">개인정보처리방침</a>
+        <a href="">이메일무단수집거부</a>
+      </div>
+      <div class="utill-info">
+        <div class="info-number">+82 02-545-7811</div>
+        <div class="info-mail">lim@archisound.co.kr</div>
+      </div>
+    </div>
+    <button class="btn-utill-close"><span class="hide-txt">닫기</span></button>
+  </div>
+  <!-- 전체 검색 -->
+  <div class="all-search-group" data-lenis-prevent="true" style="display: none">
+    <div class="utill-header">
+      <h1>
+        <a href="" class="logo"><span class="hide-txt">홈으로 이동</span></a>
+      </h1>
+    </div>
+    <div class="archi-textfield">
+      <div class="archi-component-input">
+        <input
+          type="text"
+          placeholder="검색어를 입력해주세요"
+          class="textfield-input"
+        />
+        <div class="utill-btn-area">
+          <button class="btn-clear"><span class="hide-txt">삭제</span></button>
+          <button class="btn-search"><span class="hide-txt">검색</span></button>
+        </div>
+      </div>
+    </div>
+    <button class="btn-utill-close"><span class="hide-txt">닫기</span></button>
+  </div>
+
+  <!-- mo 전체/검색 -->
+  <div class="mo-menu-group" data-lenis-prevent="true" style="display: none">
+    <div class="utill-header">
+      <h1>
+        <a href="" class="logo"><span class="hide-txt">홈으로 이동</span></a>
+      </h1>
+    </div>
+    <div class="menu-area">
+      <div class="archi-textfield">
+        <div class="archi-component-input">
+          <input
+            type="text"
+            placeholder="검색어를 입력해주세요"
+            class="textfield-input"
+          />
+          <div class="utill-btn-area">
+            <button class="btn-clear"
+              ><span class="hide-txt">삭제</span></button
+            >
+            <button class="btn-search"
+              ><span class="hide-txt">검색</span></button
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="archi-component-accordion">
+        <div class="accordion-item">
+          <button class="mg-accordion-trigger"
+            >COMPANY<span class="hide-txt">페이지 이동</span></button
+          >
+        </div>
+        <div class="accordion-item">
+          <button class="mg-accordion-trigger"
+            >BUSINESS<span class="hide-txt">페이지 이동</span></button
+          >
+          <div class="accordion-content">
+            <ul>
+              <li><a href="">계획설계</a></li>
+              <li><a href="">중간설계</a></li>
+              <li><a href="">실시설계</a></li>
+              <li><a href="">시공단계 컨설팅</a></li>
+              <li><a href="">시공단계 책임시공</a></li>
+              <li><a href="">평가단계</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="mg-accordion-trigger"
+            >PROJECT<span class="hide-txt">페이지 이동</span></button
+          >
+        </div>
+        <div class="accordion-item">
+          <button class="mg-accordion-trigger"
+            >PR CENTER<span class="hide-txt">페이지 이동</span></button
+          >
+        </div>
+        <div class="accordion-item">
+          <button class="mg-accordion-trigger"
+            >CONTACT US<span class="hide-txt">페이지 이동</span></button
+          >
+        </div>
+      </div>
+    </div>
+    <button class="btn-utill-close"><span class="hide-txt">닫기</span></button>
+  </div>
+</header>
+
+      <div class="archi-main-wrap">
+        <div id="content" role="main">
+          <!-- 탑 패럴랙스 영역 -->
+          <section class="main-top-container">
+            <div class="top-cont01">
+              <div class="top-text-r set-opacity-0">
+                <span>더 좋은 소리를 위한 통합플랫폼</span>
+                <span>아키사운드</span>
+              </div>
+              <h2 class="hide-txt">
+                BEYOND ONE-STOP SERVICE FOR A BETTER SOUND
+              </h2>
+              <!-- PC -->
+              <div class="top-text-center pc-show">
+                <div class="text-line txt01">
+                  <span class="text-row set-opacity-0"> BEYOND</span>
+                </div>
+                <div class="text-line txt02">
+                  <span class="text-row set-opacity-0"> ONE-STOP</span>
+
+                  <span class="text-row set-opacity-0"> SERVICE</span>
+                </div>
+                <div class="text-line txt03">
+                  <span class="text-row set-opacity-0"> FOR</span>
+
+                  <span class="text-row set-opacity-0"> A</span>
+
+                  <span class="text-row set-opacity-0"> BETTER</span>
+
+                  <span class="text-row set-opacity-0"> SOUND</span>
+                </div>
+              </div>
+
+              <!-- MO -->
+              <div class="top-text-center mo-show">
+                <div class="text-line txt01">
+                  <span class="text-row set-opacity-0"> BEYOND</span>
+                </div>
+                <div class="text-line txt02">
+                  <span class="text-row set-opacity-0"> ONE-STOP</span>
+                </div>
+                <div class="text-line txt03">
+                  <span class="text-row set-opacity-0"> SERVICE FOR A</span>
+                </div>
+                <div class="text-line txt04">
+                  <span class="text-row set-opacity-0"> BETTER SOUND</span>
+                </div>
+              </div>
+              <div class="top-text-l set-opacity-0">
+                <span>
+                  공간을 이해하고 소리를 관리하여<br class="mo-show" />
+                  오감을 만족시키는 음향환경을 디자인하다
+                </span>
+              </div>
+            </div>
+            <div class="top-cont02 set-opacity-0">
+              <div class="top-visual-bg"></div>
+            </div>
+            <!-- PC -->
+            <div class="top-cont03 pc-show">
+              <div class="top-text-fill">
+                <p class="text-line">
+                  우리는 무형의 가치를 창조하는 그룹입니다.
+                </p>
+                <p class="text-line">
+                  더 좋은 소리환경을 위한 통합 플랫폼을 통해 문화예술컨텐츠의
+                </p>
+                <p class="text-line">
+                  수준을 높이고 삶의 가치를 향상시키는 건축물을 만들고 있습니다.
+                </p>
+                <p class="text-line">
+                  음향이라는 특수한 분야의 오랜 경험과 기술력, 최고의 인재를
+                  겸비하고
+                </p>
+                <p class="text-line"
+                  >있습니다. 건축공간의 다양성을 존중하면서 각자의 한계를
+                  넘어</p
+                >
+                <p class="text-line"
+                  >가능성을 실현할 가치향상을 위한 기술을 제공하겠습니다.</p
+                >
+              </div>
+            </div>
+
+            <!-- MO -->
+            <div class="top-cont03 mo-show">
+              <div class="top-text-fill">
+                <p class="text-line">우리는 무형의 가치를 창조하는</p>
+                <p class="text-line">그룹입니다. 더 좋은 소리환경을 위한 </p>
+                <p class="text-line">통합 플랫폼을 통해 문화예술컨텐츠의 </p>
+                <p class="text-line">수준을 높이고 삶의 가치를 향상시키는 </p>
+                <p class="text-line">건축물을 만들고 있습니다. 음향이라는</p>
+                <p class="text-line">특수한 분야의 오랜 경험과 기술력,</p>
+                <p class="text-line">최고의 인재를 겸비하고 있습니다.</p>
+                <p class="text-line">건축공간의 다양성을 존중하면서</p>
+                <p class="text-line">각자의 한계를 넘어 가능성을</p>
+                <p class="text-line">실현할 가치향상을 위한 기술을</p>
+                <p class="text-line">제공하겠습니다.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- 시공단계 스크롤 영역 -->
+          <section class="main-scroll-container">
+            <div class="fixed-bg">
+              <video autoplay loop muted playsinline>
+                <source
+                  type="video/mp4"
+                  class="scroll-cont-video"
+                  src="../../assets/images/mp4/egual_lottie.mp4"
+                />
+              </video>
+              <div class="bg-mask" aria-hidden="true"></div>
+            </div>
+
+            <div class="scroll-cont-wrap">
+              <a href="#" class="cont-link">
+                <div class="scroll-cont r-large">
+                  <div class="cont-inner">
+                    <div class="tit-area">계획설계</div>
+                    <div class="img-area">
+                      <img
+                        src="../../assets/images/main/main_scroll_img01.jpg"
+                        alt="계획 설계"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="cont-link" class="cont-link">
+                <div class="scroll-cont l-small">
+                  <div class="cont-inner">
+                    <div class="tit-area">중간설계</div>
+                    <div class="img-area">
+                      <img
+                        src="../../assets/images/main/main_scroll_img02.jpg"
+                        alt="중간 설계"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="cont-link">
+                <div class="scroll-cont r-large">
+                  <div class="cont-inner">
+                    <div class="tit-area">실시설계</div>
+                    <div class="img-area">
+                      <img
+                        src="../../assets/images/main/main_scroll_img03.jpg"
+                        alt="실시 설계"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="cont-link">
+                <div class="scroll-cont l-large">
+                  <div class="cont-inner">
+                    <div class="tit-area">시공단계 컨설팅</div>
+                    <div class="img-area">
+                      <img
+                        src="../../assets/images/main/main_scroll_img04.jpg"
+                        alt="시공단계 컨설팅"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="cont-link">
+                <div class="scroll-cont r-small">
+                  <div class="cont-inner">
+                    <div class="tit-area">시공단계 책임시공</div>
+                    <div class="img-area">
+                      <img
+                        src="../../assets/images/main/main_scroll_img07.jpg"
+                        alt="시공단계 책임시공"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="cont-link">
+                <div class="scroll-cont l-small">
+                  <div class="cont-inner">
+                    <div class="tit-area">평가단계</div>
+                    <div class="img-area">
+                      <img
+                        src="../../assets/images/main/main_scroll_img05.jpg"
+                        alt="평가단계"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <div class="fixed-tit">
+                <p class="category">BUSINESS</p>
+                <div class="word-change-wrap">
+                  <h2>
+                    <strong class="sub">
+                      <span class="top">SCHEMATIC DESIGN</span>
+                    </strong>
+                    <strong class="sub">
+                      <span class="top">DESIGN DEVELOPMENT</span>
+                    </strong>
+                    <strong class="sub">
+                      <span class="top">CONSTRUCTION DOCUMENTS</span>
+                    </strong>
+                    <strong class="sub">
+                      <span class="top">JOB SITE SUPERVISION</span>
+                    </strong>
+                    <strong class="sub">
+                      <span class="top">RESPONSIBLE CONSTRUCTION</span>
+                    </strong>
+                    <strong class="sub">
+                      <span class="top">EVALUATION STAGE</span>
+                    </strong>
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 프로젝트 소개 영역 -->
+          <section class="main-proj-container">
+            <div class="archi-content-wrap">
+              <div class="archi-tit-wrap">
+                <div class="tit-area">
+                  <h2 class="archi-tit">
+                    <span>PROJECT</span>
+                  </h2>
+                  <div class="archi-sub">
+                    <span>
+                      고객의 환경과 제한여건에 맞추어 진행한 대표 프로젝트를
+                      소개합니다.
+                    </span>
+                  </div>
+                </div>
+                <div class="btn-area">
+                  <a href="#" class="btn-link"></a>
+                </div>
+              </div>
+              <!-- PC -->
+              <div class="archi-list-wrap pc-show">
+                <ul class="row-list">
+                  <li class="set-opacity-0">
+                    <a href="#" class="list-link">
+                      <div class="row-inner">
+                        <div class="top-area">
+                          <span class="type-r">Acoustic Facilities</span>
+                        </div>
+                        <div class="img-area">
+                          <div class="img-mask"></div>
+                          <img
+                            src="../../assets/images/main/main_proj_img01.jpg"
+                            alt="프로젝트 이미지"
+                          />
+                        </div>
+                        <div class="tit-area">
+                          <div class="col-tit">리움LYUM 연주홀</div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="set-opacity-0">
+                    <a href="#" class="list-link">
+                      <div class="row-inner">
+                        <div class="top-area">
+                          <span class="type-r">Culture</span>
+                        </div>
+                        <div class="img-area">
+                          <div class="img-mask"></div>
+                          <img
+                            src="../../assets/images/main/main_proj_img02.jpg"
+                            alt="프로젝트 이미지"
+                          />
+                        </div>
+                        <div class="tit-area">
+                          <div class="col-tit">
+                            빅히트 엔터테인먼트 대치동 사옥입니다 두줄 두줄은
+                            어떻게 보여질까요?
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="set-opacity-0">
+                    <a href="#" class="list-link">
+                      <div class="row-inner">
+                        <div class="top-area">
+                          <span class="type-r">Mixed-Use</span>
+                        </div>
+                        <div class="img-area">
+                          <div class="img-mask"></div>
+                          <img
+                            src="../../assets/images/main/main_proj_img03.jpg"
+                            alt="프로젝트 이미지"
+                          />
+                        </div>
+                        <div class="tit-area">
+                          <div class="col-tit">
+                            네이버 파트너T스퀘어 역삼 리뉴얼
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="set-opacity-0">
+                    <a href="#" class="list-link">
+                      <div class="row-inner">
+                        <div class="top-area">
+                          <span class="type-r">Acoustic Facilities</span>
+                        </div>
+                        <div class="img-area">
+                          <div class="img-mask"></div>
+                          <img
+                            src="../../assets/images/main/main_proj_img01.jpg"
+                            alt="프로젝트 이미지"
+                          />
+                        </div>
+                        <div class="tit-area">
+                          <div class="col-tit">리움LYUM 연주홀</div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="set-opacity-0">
+                    <a href="#" class="list-link">
+                      <div class="row-inner">
+                        <div class="top-area">
+                          <span class="type-r">Culture</span>
+                        </div>
+                        <div class="img-area">
+                          <div class="img-mask"></div>
+                          <img
+                            src="../../assets/images/main/main_proj_img02.jpg"
+                            alt="프로젝트 이미지"
+                          />
+                        </div>
+                        <div class="tit-area">
+                          <div class="col-tit">
+                            빅히트 엔터테인먼트 대치동 사옥입니다 두줄 두줄은
+                            어떻게 보여질까요?
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="set-opacity-0">
+                    <a href="#" class="list-link">
+                      <div class="row-inner">
+                        <div class="top-area">
+                          <span class="type-r">Mixed-Use</span>
+                        </div>
+                        <div class="img-area">
+                          <div class="img-mask"></div>
+                          <img
+                            src="../../assets/images/main/main_proj_img03.jpg"
+                            alt="프로젝트 이미지"
+                          />
+                        </div>
+                        <div class="tit-area">
+                          <div class="col-tit">
+                            네이버 파트너T스퀘어 역삼 리뉴얼
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- MO -->
+              <div class="archi-component-swiper type-list mo-show">
+                <div class="swiper number">
+                  <ul class="swiper-wrapper row-list">
+                    <li class="swiper-slide">
+                      <a href="#" class="list-link">
+                        <div class="row-inner">
+                          <div class="top-area">
+                            <span class="type-r">Mixed-Use 외 2건</span>
+                          </div>
+                          <div class="img-area">
+                            <div class="img-mask"></div>
+                            <img
+                              src="../../assets/images/main/main_proj_img01.jpg"
+                              alt="프로젝트 이미지"
+                            />
+                          </div>
+                          <div class="tit-area">
+                            <div class="col-tit">리움LYUM 연주홀</div>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="#" class="list-link">
+                        <div class="row-inner">
+                          <div class="top-area">
+                            <span class="type-r">Acoustic Facilities</span>
+                          </div>
+                          <div class="img-area">
+                            <div class="img-mask"></div>
+                            <img
+                              src="../../assets/images/main/main_proj_img01.jpg"
+                              alt="프로젝트 이미지"
+                            />
+                          </div>
+                          <div class="tit-area">
+                            <div class="col-tit">
+                              빅히트 엔터테인먼트 대치동
+                              두줄두줄두줄두줄두줄두줄두줄두줄두줄
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="swiper-slide">
+                      <a href="#" class="list-link">
+                        <div class="row-inner">
+                          <div class="top-area">
+                            <span class="type-r">Acoustic Facilities</span>
+                          </div>
+                          <div class="img-area">
+                            <div class="img-mask"></div>
+                            <img
+                              src="../../assets/images/main/main_proj_img01.jpg"
+                              alt="프로젝트 이미지"
+                            />
+                          </div>
+                          <div class="tit-area">
+                            <div class="col-tit">
+                              빅히트 엔터테인먼트 대치동
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="swiper-pagination"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 하단 패럴럭스 영역 -->
+          <section class="main-pride-container">
+            <div class="pride-cont-wrap">
+              <div class="bg-area"></div>
+              <div class="inner-tit-area">
+                <div class="main-tit">
+                  <div class="main-tit-mask">
+                    <div class="text-line">
+                      <span class="text-row set-opacity-0"
+                        >음향산업 부문 최초</span
+                      >
+                    </div>
+                  </div>
+                  <div class="main-tit-mask">
+                    <div class="text-line">
+                      <span class="text-row set-opacity-0"
+                        >글로벌 고성장 기업</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="sub-tit set-opacity-0">
+                  <span>
+                    아시아 태평양 고성장<br class="mo-show" />500대 기업에
+                    <br class="pc-show" />
+                    3년 연속 선정
+                  </span>
+                  <span>
+                    영국 파이낸셜 타임즈와 일본 니케이 아시아가 독일의 글로벌
+                    리서치 전문기관 스태티스타와 함께 조사하여 발표한 ‘아시아
+                    태평양 고성장 500대 기업’에 3년 연속 선정되었습니다.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- PR CENTER 영역 -->
+          <section class="main-pr-container">
+            <div class="archi-content-wrap">
+              <div class="archi-tit-wrap">
+                <div class="tit-area">
+                  <h2 class="archi-tit">
+                    <span>PR CENTER</span>
+                  </h2>
+                  <div class="archi-sub">
+                    <span>아키사운드의 다양한 소식을 만나보세요.</span>
+                  </div>
+                </div>
+                <div class="btn-area">
+                  <a href="#" class="btn-link"></a>
+                </div>
+              </div>
+              <div class="archi-board-wrap set-opacity-0">
+                <div class="archi-img-wrap">
+                  <span class="board-img">
+                    <img
+                      src="../../assets/images/main/main_proj_img01.jpg"
+                      alt="hover01"
+                    />
+                    <img
+                      src="../../assets/images/main/main_proj_img02.jpg"
+                      alt="hover02"
+                    />
+                    <img
+                      src="../../assets/images/main/main_proj_img03.jpg"
+                      alt="hover03"
+                    />
+                  </span>
+                </div>
+                <!-- 240317 수정 -->
+                <ul class="new-board-list">
+                  <li>
+                    <a href="#" class="board-link">
+                      <div class="new-board-inner">
+                        <div class="ctg-area">소식</div>
+                        <div class="col-area">
+                          <div class="tit-area">
+                            한국음향학회 주관 음향 기술 Seminar / 제3회 골든
+                            이어 선발대회
+                          </div>
+                          <div class="date-area">2023. 09. 05</div>
+                        </div>
+                      </div>
+                    </a>
+                    <div aria-hidden="true" class="list-item-overlay">
+                      <div class="new-board-inner">
+                        <div class="ctg-area">소식</div>
+                        <div class="col-area">
+                          <div class="tit-area">
+                            한국음향학회 주관 음향 기술 Seminar / 제3회 골든
+                            이어 선발대회
+                          </div>
+                          <div class="date-area">2023. 09. 05</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div aria-hidden="true" class="overlay-mask"></div>
+                  </li>
+                  <li>
+                    <a href="#" class="board-link">
+                      <div class="new-board-inner">
+                        <div class="ctg-area">뉴스</div>
+                        <div class="col-area">
+                          <div class="tit-area">
+                            ‘아시아 태평양 지역의 고성장 기업’ 3년 연속 선정
+                          </div>
+                          <div class="date-area">2023. 09. 05</div>
+                        </div>
+                      </div>
+                    </a>
+                    <div aria-hidden="true" class="list-item-overlay">
+                      <div class="new-board-inner">
+                        <div class="ctg-area">뉴스</div>
+                        <div class="col-area">
+                          <div class="tit-area">
+                            ‘아시아 태평양 지역의 고성장 기업’ 3년 연속 선정
+                          </div>
+                          <div class="date-area">2023. 09. 05</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div aria-hidden="true" class="overlay-mask"></div>
+                  </li>
+                  <li>
+                    <a href="#" class="board-link">
+                      <div class="new-board-inner">
+                        <div class="ctg-area">뉴스</div>
+                        <div class="col-area">
+                          <div class="tit-area">
+                            아키사운드의 임우승 대표이사 국회의원상 수상
+                          </div>
+                          <div class="date-area">2023. 09. 05</div>
+                        </div>
+                      </div>
+                    </a>
+                    <div aria-hidden="true" class="list-item-overlay">
+                      <div class="new-board-inner">
+                        <div class="ctg-area">뉴스</div>
+                        <div class="col-area">
+                          <div class="tit-area">
+                            아키사운드의 임우승 대표이사 국회의원상 수상
+                          </div>
+                          <div class="date-area">2023. 09. 05</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div aria-hidden="true" class="overlay-mask"></div>
+                  </li>
+                </ul>
+                <!-- //240317 수정 -->
+              </div>
+            </div>
+          </section>
+
+          <!-- 텍스트 플로우 영역 -->
+          <section class="main-flow-container">
+            <!-- first line -->
+            <div class="text-infinite-wrap">
+              <div class="text-infinite">
+                <p class="forward">
+                  <span class="point">S</span>
+                  OUND DESIGN C
+                  <span class="point">O</span>
+                  NSULTING M
+                  <span class="point">E</span>
+                  ASUREMEN
+                  <span class="point">T</span>
+                  &nbsp;& CONSTR
+                  <span class="point">U</span>
+                  CTION
+                </p>
+                <p class="forward">
+                  <span class="point">S</span>
+                  OUND DESIGN C
+                  <span class="point">O</span>
+                  NSULTING M
+                  <span class="point">E</span>
+                  ASUREMEN
+                  <span class="point">T</span>
+                  &nbsp;& CONSTR
+                  <span class="point">U</span>
+                  CTION
+                </p>
+              </div>
+            </div>
+            <!-- second line -->
+            <div class="text-infinite-wrap">
+              <div class="text-infinite">
+                <p class="reverse">
+                  <span class="point">S</span>
+                  OUND DESIGN C
+                  <span class="point">O</span>
+                  NSULTING M
+                  <span class="point">E</span>
+                  ASUREMEN
+                  <span class="point">T</span>
+                  &nbsp;& CONSTR
+                  <span class="point">U</span>
+                  CTION
+                </p>
+                <p class="reverse">
+                  <span class="point">S</span>
+                  OUND DESIGN C
+                  <span class="point">O</span>
+                  NSULTING M
+                  <span class="point">E</span>
+                  ASUREMEN
+                  <span class="point">T</span>
+                  &nbsp;& CONSTR
+                  <span class="point">U</span>
+                  CTION
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <!-- s: footer include-->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="logo-area">
+      <div class="footer-logo"></div>
+      <button class="btn-top"
+        ><span class="hide-txt">상단으로 이동</span></button
+      >
+    </div>
+    <div class="footer-info-area">
+      <div class="footer-info-box">
+        <div class="intro-txt">
+          Beyond One-Stop Service
+          <br />
+          For A Better Sound
+        </div>
+        <div class="company-info">
+          <!-- <div class="info-list">
+            <span class="info-tit">CONTACT</span>
+            <div class="info-txt pc-show">
+              <span class="type-adress">02-54507811</span>
+              <span class="type-maail">lim@archisound.co.kr</span>
+            </div>
+          </div> -->
+          <div class="info-list">
+            <span class="info-tit">CONTACT</span>
+            <div class="info-txt">
+              <span class="type-adress">
+                서울특별시 강남구 학동로224 <br class="mo-show" />(논현동,
+                삼환아르누보3) 3층
+              </span>
+              <span class="type-adress">02-545-7811</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-nav-area">
+        <div class="nav-list-box">
+          <ul class="nav-list">
+            <li>
+              <a href="#">개인정보처리방침</a>
+            </li>
+            <li>
+              <a href="#">이메일무단수집거부</a>
+            </li>
+          </ul>
+          <p class="copy-txt">© 2024 ARCHISOUND. ALL RIGHTS RESERVED</p>
+        </div>
+        <div class="social-sns">
+          <ul class="sns-list">
+            <li>
+              <a
+                href="https://www.facebook.com/archisound/?locale=ko_KR"
+                class="ico-sns facebook"
+                ><span class="hide-txt">페이스북으로 이동</span></a
+              >
+            </li>
+            <li>
+              <a href="" class="ico-sns instagram"
+                ><span class="hide-txt">인스타그램으로 이동</span></a
+              >
+            </li>
+            <li>
+              <a href="" class="ico-sns youtube"
+                ><span class="hide-txt">유튜브로 이동</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- e: footer include-->
+
+    </div>
+    <div class="dimm"></div>
+    <!-- 메인팝업 -->
+    <div
+      class="modal-wrap main-popup"
+      data-modal-trigger="modal01"
+      data-lenis-prevent="true"
+    >
+      <div class="modal-frame">
+        <div class="modal-container">
+          <div class="modal-header">
+            <span class="header-tit">아키사운드 2024 채용공고</span>
+          </div>
+          <div class="modal-content">
+            <div class="img-wrap">
+              <img src="../../assets/images/content/img_popup.jpg" alt="" />
+            </div>
+            <div class="archi-btn-wrap">
+              <a href="#" class="btn-more">자세히보기</a>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="archi-component-checkbox small">
+              <input type="checkbox" id="check-01" class="checkbox-input" />
+              <label for="check-01" class="checkbox-input-label"
+                >오늘 그만보기</label
+              >
+            </div>
+          </div>
+          <button class="md-close btn" data-modal-close="modal01">
+            <span class="hide-txt">닫기</span>
+          </button>
+        </div>
+      </div>
+      <div class="modal-dimm" data-modal-close="modal01"></div>
+    </div>
+    <!-- //메인팝업 -->
+    <script type="module" src="../../assets/scripts/pageComp/main.js"></script>
+    <script type="module" src="../../assets/scripts/common.js"></script>
+  </body>
+</html>

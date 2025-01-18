@@ -1,0 +1,247 @@
+@use "../abstracts" as *;
+
+.footer {
+  background: url(../images/common/footer_bg.png) no-repeat;
+  background-size: 100% 100%;
+  //임시
+  .footer-inner {
+    @include vw(padding, 88 92 80);
+    margin: 0 auto;
+  }
+  .logo-area {
+    display: flex;
+    justify-content: space-between;
+    .footer-logo {
+      @include vw(width, 360);
+      @include vw(height, 53);
+      background: url(../images/common/footer_logo.png) no-repeat;
+      background-size: 100% 100%;
+    }
+    .btn-top {
+      @include vw(width, 64);
+      @include vw(height, 64);
+      background: url(../images/icon/ico_arrow_top.png) no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+  .footer-info-area {
+    @include vw(margin-top, 88);
+    @include vw(padding-top, 80);
+    @include vw(border-top, 1px solid $gray_666);
+  }
+  .footer-info-box {
+    display: flex;
+    justify-content: space-between;
+    .intro-txt {
+      color: $gray_fff;
+      @include font(40, m, pc, eng);
+      line-height: 1.5;
+    }
+    span {
+      color: $gray_fff;
+      @include font(20, r, pc);
+    }
+    .company-info {
+      display: flex;
+    }
+    .info-list {
+      span {
+        display: block;
+      }
+      .info-tit {
+        @include font(20, b, pc, eng);
+      }
+      .info-txt {
+        @include vw(margin-top, 38);
+        span {
+          display: block;
+          + span {
+            @include vw(marign-top, 4);
+          }
+        }
+      }
+      + .info-list {
+        @include vw(margin-left, 60);
+      }
+    }
+  }
+  .footer-nav-area {
+    display: flex;
+    @include vw(margin-top, 88);
+    align-items: flex-end;
+    justify-content: space-between;
+    .nav-list-box {
+      .nav-list {
+        li {
+          display: inline-block;
+          a {
+            color: $gray-fff;
+            @include font(20, r, pc);
+          }
+          &:first-child {
+            a {
+              font-weight: 700;
+            }
+          }
+          + li {
+            @include vw(margin-left, 16);
+          }
+        }
+      }
+      .copy-txt {
+        @include vw(margin-top, 16);
+        color: $gray-fff;
+        @include font(18, r, pc, eng);
+      }
+    }
+    .social-sns {
+      .sns-list {
+        li {
+          display: inline-block;
+          @include vw(width, 48);
+          @include vw(height, 48);
+          + li {
+            @include vw(margin-left, 32);
+          }
+        }
+        .ico-sns {
+          display: block;
+          @include vw(width, 48);
+          @include vw(height, 48);
+          &.facebook {
+            background: url(../images/icon/ico_facebook.png) no-repeat;
+            background-size: 100% auto;
+          }
+          &.instagram {
+            background: url(../images/icon/ico_instagram.png) no-repeat;
+            background-size: 100% auto;
+          }
+          &.youtube {
+            background: url(../images/icon/ico_youtube.png) no-repeat;
+            background-size: 100% auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+// MO
+@media (max-width: 1024px) {
+  .footer {
+    background: url(../images/common/footer_bg_mo.png) no-repeat;
+    background-size: cover;
+    .footer-inner {
+      @include rem(padding, 40 20 41);
+    }
+    .logo-area {
+      .footer-logo {
+        @include rem(width, 196);
+        @include rem(height, 30);
+        background: url(../images/common/archi_footer_logo_mo.png) no-repeat;
+        background-size: 100% 100%;
+      }
+      .btn-top {
+        @include rem(width, 32);
+        @include rem(height, 32);
+        background: url(../images/icon/ico_arrow_top_mo.png) no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+    .footer-info-area {
+      @include rem(margin-top, 40);
+      @include rem(padding-top, 32);
+    }
+    .footer-info-box {
+      display: block;
+      .intro-txt {
+        @include font(20, m, mo, eng);
+        line-height: 1.4;
+        @include rem(letter-spacing, 1.4);
+      }
+      span {
+        @include font(16, r, mo);
+      }
+      .company-info {
+        display: block;
+        @include rem(margin-top, 48);
+      }
+      .info-list {
+        span {
+          display: block;
+          @include rem(line-height, 27.2);
+          &.pc-show {
+            display: none;
+          }
+        }
+        .info-tit {
+          @include font(16, b, mo, eng);
+        }
+        .info-txt {
+          @include rem(margin-top, 8);
+          span + span {
+          }
+        }
+        + .info-list {
+          @include rem(margin-left, 0);
+        }
+      }
+    }
+    .footer-nav-area {
+      display: flex;
+      flex-flow: column-reverse;
+      @include rem(margin-top, 48);
+      align-items: flex-start;
+      .nav-list-box {
+        .nav-list {
+          li {
+            a {
+              @include font(16, r, mo);
+            }
+            &:first-child {
+              a {
+                font-weight: 700;
+              }
+            }
+            + li {
+              @include rem(margin-left, 16);
+            }
+          }
+        }
+        .copy-txt {
+          @include rem(margin-top, 12);
+          color: $gray_777;
+          @include font(14, r, mo, eng);
+        }
+      }
+      .social-sns {
+        @include rem(margin-bottom, 24);
+        .sns-list {
+          li {
+            @include rem(width, 32);
+            @include rem(height, 32);
+            + li {
+              @include rem(margin-left, 24);
+            }
+          }
+          .ico-sns {
+            @include rem(width, 32);
+            @include rem(height, 32);
+            &.facebook {
+              background: url(../images/icon/ico_facebook_mo.png) no-repeat;
+              background-size: 100% auto;
+            }
+            &.instagram {
+              background: url(../images/icon/ico_instagram_mo.png) no-repeat;
+              background-size: 100% auto;
+            }
+            &.youtube {
+              background: url(../images/icon/ico_youtube_mo.png) no-repeat;
+              background-size: 100% auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
