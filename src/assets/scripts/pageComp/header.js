@@ -53,7 +53,6 @@ class headerScroll {
     };
 
     // header scroll
-    // 클래스 핸들러를 함수로 분리해보는건 어떨까요?
     if (scrollDown) {
       this.header.classList.add("on");
       this.progressBg.classList.add("on");
@@ -91,9 +90,6 @@ class headerScroll {
 
       if (isCombine) {
         tabTopEl.classList.add("fixed");
-        // hasHeaderClass
-        //   ? (tabTopEl.style.top = `${progressH - 1}px`)
-        //   : (tabTopEl.style.top = `${headerH + progressH - 1}px`);
         hasHeaderClass
           ? (tabTopEl.style.transition = "none")
           : (tabTopEl.style.transition =

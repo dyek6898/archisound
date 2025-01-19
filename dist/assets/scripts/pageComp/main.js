@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
   devMainFunction.prideContAnimation();
   devMainFunction.projectAreaScrollEvent();
   devMainFunction.prCenterMouseEvent();
-  !isMobile && devMainFunction.handleClipPathText();
 });
 
 const devMainFunction = {
@@ -703,54 +702,6 @@ const devMainFunction = {
       intersectionOptions
     );
     observer.observe(target);
-  },
-
-  handleClipPathText() {
-    const container = document.querySelector(".main-pr-container");
-    if (isMobile || !container) return;
-
-    const imageWrap = document.querySelector(".archi-img-wrap");
-    const boardWrap = document.querySelector(".archi-board-wrap");
-    const listItems = boardWrap.querySelectorAll(".new-board-list li");
-    const checkListImage = boardWrap.querySelectorAll("img").length;
-
-    if (!checkListImage) return;
-
-    const imgAnimation = new ImageChange(container);
-    imgAnimation.init();
-
-    listItems.forEach((item, index) => {
-      item.addEventListener("mousemove", function (e) {
-        const boardRect = boardWrap.getBoundingClientRect();
-        const imageRect = imageWrap.getBoundingClientRect();
-
-        const offsetX = e.clientX - boardRect.left;
-        const centerX = imageRect.width / 2.1;
-        const deltaX = Math.floor(offsetX - centerX);
-
-        const topY = 0;
-        const bottomY = 200;
-        const leftX = Math.max(deltaX, 0);
-        const rightX = deltaX + imageRect.width;
-
-        const targetOverlay = item.querySelector(".list-item-overlay");
-        if (targetOverlay) {
-          targetOverlay.style.clipPath = `polygon(${leftX}px ${topY}px, ${rightX}px ${topY}px, ${rightX}px ${bottomY}px, ${leftX}px ${bottomY}px)`;
-        }
-      });
-
-      item.addEventListener("mouseenter", function () {
-        const targetOverlay = item.querySelector(".list-item-overlay");
-        targetOverlay.classList.add("ux-active");
-      });
-
-      item.addEventListener("mouseleave", function () {
-        const targetOverlay = item.querySelector(".list-item-overlay");
-        if (targetOverlay) {
-          targetOverlay.classList.remove("ux-active");
-        }
-      });
-    });
   },
 };
 

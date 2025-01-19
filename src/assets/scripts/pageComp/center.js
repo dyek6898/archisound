@@ -10,8 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   prCenterFnc01.formAreaShow();
   prCenterFnc01.listShowAnimation();
   prCenterFnc01.btnShowAnimation();
-  // 상세
-  prCenterFnc02.firstContShow();
 });
 
 const isMobile = window.matchMedia("(max-width: 1024px)").matches;
@@ -145,64 +143,5 @@ const prCenterFnc01 = {
       basicOptions.intersection
     );
     observe.observe(moreBtn);
-  },
-};
-
-// PR CENTER 02
-// 상세 페이지
-const prCenterFnc02 = {
-  firstContShow: () => {
-    const container = document.querySelector(".archi-sub-content-group.detail");
-    if (!container) return;
-    const badge = container.querySelector(".archi-component-button.badge");
-    const txtArea = container.querySelector(".tit-area");
-    const detailCont = container.querySelector(".detail-cont-wrap");
-    const pageControl = container.querySelector(".archi-page-control");
-
-    // 옵션
-    const txtRevealOptions = {
-      delay: 0,
-      initialY: "40px",
-    };
-
-    // 인스턴스 생성
-    const badegeReveal = new TextReveal(badge, txtRevealOptions);
-    const txtReveal = new TextReveal(txtArea, txtRevealOptions);
-    const detailContReveal = new TextReveal(
-      detailCont,
-      basicOptions.revealSecond
-    );
-    const pageControlReveal = new TextReveal(
-      pageControl,
-      basicOptions.revealThird
-    );
-
-    // gsap 세팅
-    badegeReveal.settingGsap(badge);
-    txtReveal.settingGsap(txtArea);
-    detailContReveal.settingGsap(detailCont);
-    pageControlReveal.settingGsap(pageControl);
-
-    // 콜백 함수 생성
-    const callback = (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          badegeReveal.revealTextBasic(badge);
-          txtReveal.revealMainTitle(txtArea);
-          detailContReveal.revealTextBasic(detailCont);
-          pageControlReveal.revealTextBasic(pageControl);
-          observer.unobserve(entry.target);
-        }
-      });
-    };
-
-    // intersectionObserver 생성
-    const observe = new IntersectionObserver(
-      callback,
-      basicOptions.intersection
-    );
-
-    const target = container;
-    observe.observe(target);
   },
 };
