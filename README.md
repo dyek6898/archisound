@@ -1,6 +1,5 @@
 ## 🔥 작업 영역(script)
 ⚡ 인터랙션 및 페이지에 필요한 컴포넌트 및 기능 script 작업
-⚡ pageComp 폴더
 > - 각 페이지별 script : main.js, company.js, business.js, project.js, center.js, utils.js
 > - header 및 gnb script : header.js
 > - 기능별 공통 script : ui.js
