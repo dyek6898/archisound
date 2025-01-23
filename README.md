@@ -1,3 +1,6 @@
+## 🔥 소개 페이지
+⚡ <a href="https://dyek6898.github.io/archisound/dist/pages/main/IAM_MAIN_PG001.html">페이지 링크</a>
+
 ## 🔥 작업 영역(script)
 ⚡ 인터랙션 및 페이지에 필요한 컴포넌트 및 기능 script 작업
 > - 각 페이지별 script : main.js, company.js, business.js, project.js, center.js, utils.js
